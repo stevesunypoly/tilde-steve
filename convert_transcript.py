@@ -133,6 +133,7 @@ def extract_html_meta(html_path):
         text = f.read()
     title_match = re.search(r'<title>(.*?)</title>', text, re.IGNORECASE)
     title = title_match.group(1).strip() if title_match else os.path.basename(html_path)
+    title = re.sub(r'\s*\u2014\s*Steven M\. Schneider$', '', title)
     date_match = re.search(r'<strong>Created:</strong>\s*([^<&\n]+)', text)
     date_str = date_match.group(1).strip() if date_match else ''
     return title, date_str
@@ -172,7 +173,7 @@ def regenerate_index(transcripts_dir):
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Making This Site — Steven M. Schneider</title>
+  <title>Transcripts — Steven M. Schneider</title>
   <link rel="stylesheet" href="../style.css">
 </head>
 <body>
@@ -188,13 +189,12 @@ def regenerate_index(transcripts_dir):
         <a class="nav-link" href="../index.html">Bio Sketch</a>
         <a class="nav-link" href="../teaching.html">Teaching</a>
         <a class="nav-link" href="../research.html">Research &amp; Scholarship</a>
-        <a class="nav-link" href="../artifacts/">LLM Artifacts</a>
-        <a class="nav-link active" href="../transcripts/">Making this site</a>
+        <a class="nav-link" href="../artifacts/">Artifacts</a>
     </nav>
 
     <div class="page-container">
-        <h2>Making This Site</h2>
-        <p>This page documents the LLM-assisted conversations used to design and build this website. The transcripts capture the iterative process of working with Claude and ChatGPT to develop the site&#8217;s structure, visual design, content organization, and specific features.</p>
+        <h2>Transcripts</h2>
+        <p>Transcripts of AI-assisted working sessions. These are the provenance record for artifacts and research produced with Claude and ChatGPT.</p>
         <ul class="transcript-list">
 {chr(10).join(rows)}
         </ul>
@@ -206,7 +206,68 @@ def regenerate_index(transcripts_dir):
     out_path = os.path.join(transcripts_dir, 'index.html')
     with open(out_path, 'w', encoding='utf-8') as f:
         f.write(index_html)
-    print(f"Index regenerated: {out_path}")
+    print(f"Transcripts index regenerated: {out_path}")
+
+def regenerate_artifacts_index(artifacts_dir):
+    """Scan artifacts_dir for .html files and rewrite artifacts/index.html."""
+    if not os.path.isdir(artifacts_dir):
+        return
+    entries = []
+    for fname in os.listdir(artifacts_dir):
+        if not fname.endswith('.html') or fname == 'index.html':
+            continue
+        fpath = os.path.join(artifacts_dir, fname)
+        title, _ = extract_html_meta(fpath)
+        entries.append((fname, title))
+
+    entries.sort(key=lambda e: e[1].lower())
+
+    rows = []
+    for fname, title in entries:
+        rows.append(f"""            <li>
+                <a href="{escape(fname)}">{escape(title)}</a>
+                <span class="transcript-date"></span>
+            </li>""")
+
+    index_html = f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artifacts — Steven M. Schneider</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <p class="name">Steven M. Schneider</p>
+        <p class="email">steve@sunypoly.edu</p>
+        <p class="titles">Professor of Information Design &amp; Technology | Co-Director, <a class="title-link" href="https://sunypoly.edu/research/ai-exploration-center.html">AI Exploration Center</a> | SUNY Polytechnic Institute</p>
+        <p class="fellowship">AI for the Public Good Fellow, 2025&#8211;2026 | State University of New York</p>
+    </div>
+
+    <nav class="navigation">
+        <a class="nav-link" href="../index.html">Bio Sketch</a>
+        <a class="nav-link" href="../teaching.html">Teaching</a>
+        <a class="nav-link" href="../research.html">Research &amp; Scholarship</a>
+        <a class="nav-link active" href="../artifacts/">Artifacts</a>
+    </nav>
+
+    <div class="page-container">
+        <h2>Artifacts</h2>
+        <p>Outputs generated with AI assistance &#8212; essays, interactive tools, policy documents, and other works. Each links to its source transcript where available.</p>
+        <ul class="transcript-list">
+{chr(10).join(rows)}
+        </ul>
+    </div>
+</div>
+</body>
+</html>"""
+
+    out_path = os.path.join(artifacts_dir, 'index.html')
+    with open(out_path, 'w', encoding='utf-8') as f:
+        f.write(index_html)
+    print(f"Artifacts index regenerated: {out_path}")
 
 def convert(input_path, output_dir=None):
     if not input_path.endswith('.md'):
@@ -229,6 +290,8 @@ def convert(input_path, output_dir=None):
 
     print(f"Written: {out_path}")
     regenerate_index(out_dir)
+    artifacts_dir = os.path.join(os.path.dirname(os.path.abspath(out_dir)), 'artifacts')
+    regenerate_artifacts_index(artifacts_dir)
 
 if __name__ == '__main__':
     if len(sys.argv) < 2:
