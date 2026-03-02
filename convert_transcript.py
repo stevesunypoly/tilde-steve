@@ -98,7 +98,7 @@ def render_html(metadata, pairs):
   <link rel="stylesheet" href="../style.css">
   <style>
     details {{ border:1px solid #ddd; border-radius:4px; margin:.75em 0; }}
-    summary {{ font-weight:bold; padding:.6em 1em; cursor:pointer; background:#f9f9f9; border-radius:4px; }}
+    summary {{ font-weight:bold; padding:.6em 1em; cursor:pointer; background:#f9f9f9; border-radius:4px; text-align:left; }}
     summary:hover {{ background:#f0eded; }}
     details[open] summary {{ border-bottom:1px solid #ddd; border-radius:4px 4px 0 0; }}
     .response {{ padding:1em 1.2em; line-height:1.6; }}
