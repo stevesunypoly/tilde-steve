@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TiddlyWiki vs GNNs</title>
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    details { border:1px solid #ddd; border-radius:4px; margin:.75em 0; }
+    summary { font-weight:bold; padding:.6em 1em; cursor:pointer; background:#f9f9f9; border-radius:4px; text-align:left; }
+    summary:hover { background:#f0eded; }
+    details[open] summary { border-bottom:1px solid #ddd; border-radius:4px 4px 0 0; }
+    .response { padding:1em 1.2em; line-height:1.6; }
+    .meta { font-size:.85em; color:#666; margin-bottom:1.5em; border-bottom:1px solid #eee; padding-bottom:.75em; }
+    .meta a { color:#8C1515; }
+  </style>
+</head>
+<body>
+<div class="container">
+  <nav>
+    <a href="../index.html">Home</a> |
+    <a href="../bio.html">Bio</a> |
+    <a href="../teaching.html">Teaching</a> |
+    <a href="../research.html">Research</a> |
+    <a href="../artifacts/index.html">Artifacts</a> |
+    <a href="index.html">Transcripts</a>
+  </nav>
+  <h1>TiddlyWiki vs GNNs</h1>
+  <div class="meta">
+    <strong>Created:</strong>  &nbsp;|&nbsp; <strong>Updated:</strong> 10/11/2025 12:05:56<br>
+    <strong>Source:</strong> <a href="https://chatgpt.com/c/68ea7f1d-7b78-832e-91a0-ce1588e5e47d">https://chatgpt.com/c/68ea7f1d-7b78-832e-91a0-ce1588e5e47d</a>
+  </div>
+  <p><em>Exchanges shown newest first. Click a prompt to expand the response.</em></p>
+
+    <details>
+      <summary>yes</summary>
+      <div class="response"><p>Excellent — here’s a **conceptual + practical blueprint** for how you can turn a Node.js TiddlyWiki into a _GNN-ready data pipeline_.</p>
+<p>I’ll break it into **five stages**, show how data moves from `$tw.wiki` to a graph file, and then outline what a Python GNN would consume on the other end.</p>
+<p>* * *</p>
+<p>🧩 Stage 1 — Goal
+-----------------</p>
+<p>&gt; Create a repeatable export from TiddlyWiki (Node.js) → Graph data (nodes + edges) so that a GNN (e.g. GraphSAGE, GAT, R-GCN) can learn from the structure and semantics of tiddlers.</p>
+<p>* * *</p>
+<p>⚙️ Stage 2 — Node.js Extractor Script
+-------------------------------------</p>
+<p>You can run this in your TiddlyWiki Node installation directory (for example via a plugin, or simply `node export-graph.js`).</p>
+<p>```js
+// export-graph.js
+// Run with: node export-graph.js
+const fs = require(&quot;fs&quot;);
+const path = require(&quot;path&quot;);
+const $tw = require(&quot;tiddlywiki&quot;).TiddlyWiki();</p>
+<p>const wikiPath = &quot;./wiki&quot;; // your wiki folder
+$tw.boot.argv = [wikiPath, &quot;--loadplugins&quot;];
+$tw.boot.boot();</p>
+<p>const nodes = [];
+const edges = [];</p>
+<p>Object.keys($tw.wiki.tiddlers).forEach(title =&gt; {
+  const t = $tw.wiki.getTiddler(title);
+  if (!t) return;</p>
+<p>// Node entry
+  const fields = t.fields;
+  nodes.push({
+    id: title,
+    text: fields.text || &quot;&quot;,
+    tags: fields.tags || [],
+    created: fields.created,
+    modified: fields.modified,
+    fields: Object.keys(fields)
+  });</p>
+<p>// Edge entries from tags and wiki links
+  const links = $tw.wiki.getTiddlerLinks(title) || [];
+  const backlinks = $tw.wiki.getTiddlerBacklinks(title) || [];</p>
+<p>// Forward links
+  links.forEach(target =&gt; edges.push({ source: title, target, type: &quot;link&quot; }));
+  // Tag edges
+  (fields.tags || []).forEach(target =&gt; edges.push({ source: title, target, type: &quot;tag&quot; }));
+  // Backlinks
+  backlinks.forEach(src =&gt; edges.push({ source: src, target: title, type: &quot;backlink&quot; }));
+});</p>
+<p>// Write JSON for Python / GNN
+fs.writeFileSync(
+  path.join(wikiPath, &quot;graph-nodes.json&quot;),
+  JSON.stringify(nodes, null, 2)
+);
+fs.writeFileSync(
+  path.join(wikiPath, &quot;graph-edges.json&quot;),
+  JSON.stringify(edges, null, 2)
+);</p>
+<p>console.log(`Exported ${nodes.length} nodes and ${edges.length} edges.`);
+```</p>
+<p>**What you get**</p>
+<p>```
+wiki/
+ ├─ tiddlers/…
+ ├─ graph-nodes.json   ← all tiddlers + metadata
+ └─ graph-edges.json   ← links, tags, backlinks
+```</p>
+<p>* * *</p>
+<p>🧠 Stage 3 — Embedding Generation
+---------------------------------</p>
+<p>Use a small Python script to turn each tiddler’s text into a numeric vector (node features).</p>
+<p>```python
+# embed_tiddlers.py
+import json
+from sentence_transformers import SentenceTransformer
+import numpy as np</p>
+<p>model = SentenceTransformer(&quot;all-MiniLM-L6-v2&quot;)</p>
+<p>nodes = json.load(open(&quot;graph-nodes.json&quot;))
+texts = [n[&quot;text&quot;][:5000] for n in nodes]  # truncate long ones
+embeddings = model.encode(texts, show_progress_bar=True)</p>
+<p>for n, e in zip(nodes, embeddings):
+    n[&quot;embedding&quot;] = e.tolist()</p>
+<p>json.dump(nodes, open(&quot;graph-nodes-embedded.json&quot;, &quot;w&quot;), indent=2)
+print(&quot;Embeddings saved.&quot;)
+```</p>
+<p>Now each node has an `&quot;embedding&quot;` field — a vector representation of its content.</p>
+<p>* * *</p>
+<p>🔗 Stage 4 — Graph Neural Network Training (Sketch)
+---------------------------------------------------</p>
+<p>With PyTorch Geometric:</p>
+<p>```python
+import torch
+from torch_geometric.data import Data
+import json</p>
+<p>nodes = json.load(open(&quot;graph-nodes-embedded.json&quot;))
+edges = json.load(open(&quot;graph-edges.json&quot;))</p>
+<p>id_map = {n[&quot;id&quot;]: i for i, n in enumerate(nodes)}</p>
+<p>edge_index = []
+for e in edges:
+    if e[&quot;source&quot;] in id_map and e[&quot;target&quot;] in id_map:
+        edge_index.append([id_map[e[&quot;source&quot;]], id_map[e[&quot;target&quot;]]])</p>
+<p>x = torch.tensor([n[&quot;embedding&quot;] for n in nodes], dtype=torch.float)
+edge_index = torch.tensor(edge_index, dtype=torch.long).t().contiguous()</p>
+<p>data = Data(x=x, edge_index=edge_index)</p>
+<p># Example GCN model
+from torch_geometric.nn import GCNConv
+import torch.nn.functional as F</p>
+<p>class GCN(torch.nn.Module):
+    def __init__(self, in_feats, hidden, out_feats):
+        super().__init__()
+        self.conv1 = GCNConv(in_feats, hidden)
+        self.conv2 = GCNConv(hidden, out_feats)</p>
+<p>def forward(self, data):
+        x, edge_index = data.x, data.edge_index
+        x = F.relu(self.conv1(x, edge_index))
+        return self.conv2(x, edge_index)</p>
+<p>model = GCN(in_feats=x.size(1), hidden=64, out_feats=32)
+z = model(data)  # z = learned node embeddings
+torch.save(z, &quot;tiddlywiki_gnn_embeddings.pt&quot;)
+```</p>
+<p>You now have **GNN-derived node embeddings**, aware of both textual semantics _and_ wiki structure.</p>
+<p>* * *</p>
+<p>🔁 Stage 5 — Re-Integration into TiddlyWiki
+-------------------------------------------</p>
+<p>1.  Convert each node’s learned vector into a short summary (e.g., cluster ID, nearest neighbors).
+2.  Write those back as new tiddlers:</p>
+<p>```js
+// write_embeddings.js (Node.js)
+const fs = require(&quot;fs&quot;);
+const nodes = JSON.parse(fs.readFileSync(&quot;./wiki/graph-nodes-embedded.json&quot;));
+nodes.forEach(n =&gt; {
+  const tiddler = {
+    title: `Embedding:${n.id}`,
+    text: JSON.stringify(n.embedding.slice(0,8)) + &quot;...&quot;, // preview
+    tags: [&quot;embedding&quot;]
+  };
+  $tw.wiki.addTiddler(new $tw.Tiddler(tiddler));
+});
+```</p>
+<p>3.  Visualize clusters or similarities using **TiddlyMap** or a custom D3 plugin.</p>
+<p>* * *</p>
+<p>🌐 What You’ve Built
+--------------------</p>
+<p>*   **TiddlyWiki** = human/machine co-created knowledge base (symbolic graph).
+*   **GNN layer** = learned representation that captures semantic + structural relations.
+*   **Bidirectional loop** = knowledge flows between human-authored and machine-learned structures.</p>
+<p>* * *</p>
+<p>Would you like me to extend this into a **pipeline diagram** (showing data flow and feedback loops between the TiddlyWiki instance, the embedding/GNN stages, and the reintegration layer)?</p>
+<p>---
+Powered by [ChatGPT Exporter](https://www.chatgptexporter.com)</p></div>
+    </details>
+    <details>
+      <summary>yes, so that tiddlywiki node js install generated by humans, and/or generated through addtiional prompts / responses ...</summary>
+      <div class="response"><p>Exactly — and your phrasing (“a holding pen for nodes”) is _spot on_.  
+Let’s unpack this idea carefully, because what you’re describing is not far from a _meta-architecture_ where **TiddlyWiki (Node.js)** becomes the **graph substrate and interaction layer**, and the **Graph Neural Network (GNN)** becomes the **analytical / representational layer** sitting atop it.</p>
+<p>Below is a structured outline of how this could work and why it’s conceptually powerful.</p>
+<p>* * *</p>
+<p>1\. TiddlyWiki as the Graph Substrate (&quot;Holding Pen for Nodes&quot;)
+---------------------------------------------------------------</p>
+<p>At its heart, every tiddler is already a **node**:</p>
+<p>*   **Title** → node ID
+*   **Fields** (tags, creator, created date, text, custom fields) → node attributes/features
+*   **Links and tags** → edges and adjacency relations</p>
+<p>A Node.js TiddlyWiki installation gives you:</p>
+<p>*   A **persistent graph** (all tiddlers in `$tw.wiki.tiddlers` map)
+*   **Programmatic access** via the TiddlyWiki API (`$tw.wiki.getTiddlerLinks()`, `$tw.wiki.getTiddlerBacklinks()`, etc.)
+*   A **semantic layer**—each tag or link is meaningful, human-authored, contextual, and extensible</p>
+<p>So yes: TiddlyWiki naturally becomes a **human-AI co-generated knowledge graph**.  
+Every new conversation, document, or reflection can spawn tiddlers—some human-authored, some machine-authored—each referencing others.  
+That’s the “holding pen” or **graph memory** that will later feed into the GNN.</p>
+<p>* * *</p>
+<p>2\. The GNN as the Representational Engine (&quot;Interpreter of the Graph&quot;)
+-----------------------------------------------------------------------</p>
+<p>Once you have this graph substrate, you can:</p>
+<p>*   **Extract** it periodically (or in real time) into a graph database representation (e.g., NetworkX, Neo4j, or a custom JSON schema).
+*   **Represent** each tiddler’s content (text) as an embedding vector using a language model.
+*   **Train or apply** a GNN (e.g., GraphSAGE, GAT, or Relational-GCN) to learn contextual embeddings across the entire wiki.</p>
+<p>The GNN’s job:</p>
+<p>*   Aggregate semantic information across linked tiddlers.
+*   Infer new relationships (link prediction).
+*   Provide contextual similarity measures (e.g., “find me tiddlers conceptually related to this one”).
+*   Enable structure-aware reasoning (recommend new clusters, reveal centrality, detect “emerging concepts”).</p>
+<p>Essentially, the GNN acts as a **latent map** over your explicit TiddlyWiki graph.</p>
+<p>* * *</p>
+<p>3\. Bidirectional Integration Loop
+----------------------------------</p>
+<p>You can think of this as a feedback loop between two systems:</p>
+<p>```
+[Human + AI Authors]  →  [TiddlyWiki Graph (Node.js)]
+           ↑                         ↓
+         GNN Embeddings ←→ Aggregation / Analysis
+```</p>
+<p>1.  **Human/AI generates tiddlers** (via interface, macros, or automated routines).
+2.  **TiddlyWiki maintains** the structured graph (nodes + edges).
+3.  **GNN ingests** the graph and produces learned representations.
+4.  **Results flow back** into TiddlyWiki as new tiddlers (e.g., “embedding clusters,” “related topics,” “semantic neighbors”).
+5.  Humans see, edit, and refine—closing the loop.</p>
+<p>Over time, the GNN’s embeddings could evolve to represent the _collective semantics_ of the wiki.</p>
+<p>* * *</p>
+<p>4\. Architecture Sketch
+-----------------------</p>
+<p>Here’s a simple pipeline outline for a **Graphical Neural Wiki System**:</p>
+<p>**(A) Data Layer (TiddlyWiki)**</p>
+<p>*   Tiddlers (JSON objects)
+*   Interlinks (edges)
+*   Tag/category hierarchy
+*   Event log of edits and creations</p>
+<p>**(B) Extraction Layer**</p>
+<p>*   A script exports the wiki to a graph schema (`tiddlers.json → nodes.csv + edges.csv`)
+*   Each tiddler’s text converted to embeddings (e.g., using OpenAI or local model)
+*   Edges include type (“tag,” “link,” “fieldRef”)</p>
+<p>**(C) GNN Layer**</p>
+<p>*   Build and train a GNN on this graph (e.g., PyTorch Geometric, DGL)
+*   Learn embeddings representing both content and structure</p>
+<p>**(D) Feedback / Interface Layer**</p>
+<p>*   GNN outputs (embeddings, clusters, centrality metrics) are written back to the wiki as:
+    *   New tiddlers (e.g., “Cluster: {nodes}”)
+    *   Updated fields (e.g., `embedding_vector: [...]`)
+    *   Visualizations (network graph plugin)
+*   TiddlyWiki plugins surface insights: “similar tiddlers,” “emerging topics,” etc.</p>
+<p>**(E) Human Interaction**</p>
+<p>*   Users navigate, link, and write new content, guided by the model’s insights.
+*   The graph evolves, closing the loop.</p>
+<p>* * *</p>
+<p>5\. Conceptual Significance
+---------------------------</p>
+<p>This hybrid architecture positions TiddlyWiki as:</p>
+<p>*   **A living graph memory**, editable by humans and AI alike.
+*   **A training corpus** for models that learn not just language but _knowledge topology_.
+*   **A grounded environment for co-evolution** between symbolic (links, tags) and sub-symbolic (embeddings, weights) representations.</p>
+<p>Over time, the wiki could _learn its own structure_ — self-organizing into concept clusters, suggesting new categories, or surfacing contradictions.</p>
+<p>* * *</p>
+<p>6\. Comparison to Existing Systems
+----------------------------------</p>
+<p>| System | Closest Analogy |
+| --- | --- |
+| Obsidian + Graph View | Superficial visual similarity, but no learning layer |
+| Roam / Logseq | Similar node-link philosophy, but not extensible to GNN pipelines |
+| Neo4j + GNN integration | Possible back-end comparison; lacks TiddlyWiki’s self-describing, editable nature |
+| TiddlyWiki + GNN | Both human-readable _and_ machine-learnable |</p>
+<p>* * *</p>
+<p>7\. Possible Next Steps
+-----------------------</p>
+<p>If you want to prototype this:</p>
+<p>1.  **Export the TiddlyWiki graph** — a Node.js plugin can walk all tiddlers and write `nodes.json` and `edges.json`.
+2.  **Create embeddings** (e.g., using `sentence-transformers` for the text of each tiddler).
+3.  **Run a GNN model** (e.g., GraphSAGE or GAT) in PyTorch Geometric.
+4.  **Visualize** clusters back in TiddlyWiki using D3 or a plugin like _TiddlyMap_.
+5.  **Close the loop** — write results back as “machine-generated tiddlers.”</p>
+<p>* * *</p>
+<p>Would you like me to sketch out an example of how this data pipeline might look — say, a Node.js script that extracts tiddlers into a GNN-ready graph (nodes + edges) format?</p></div>
+    </details>
+    <details>
+      <summary>how close is tiddlywiki, especially as a node js installation at scale, to being a graphical neural network ?</summary>
+      <div class="response"><p>That’s a fascinating question — it’s not obvious whether TiddlyWiki (even scaled via a Node.js setup) approaches anything like a “graphical neural network” (GNN), but we can do a conceptual comparison, point out structural similarities and differences, and assess how (or whether) one might try to bridge the gap.</p>
+<p>First, let me define terms and constraints; then we can map TiddlyWiki’s architecture to GNN components and see where the fit is weak or where it might be extended.</p>
+<p>* * *</p>
+<p>Definitions &amp; baseline
+----------------------</p>
+<p>### What is a Graph Neural Network (GNN)?</p>
+<p>*   A GNN is a neural network architecture designed to operate on graph-structured data (nodes + edges), propagating information via message passing or aggregation over neighbors, with learned weights and nonlinearities. [Wikipedia+2ACM Digital Library+2](https://en.wikipedia.org/wiki/Graph_neural_network?utm_source=chatgpt.com)
+*   Typically, each node has a feature vector; edges might optionally have features. At each layer, each node updates its hidden representation by aggregating transformed representations of its neighbors (sometimes including itself) and applying learned transformations / nonlinearities. [DataCamp+3Distill+3ACM Digital Library+3](https://distill.pub/2021/gnn-intro/?utm_source=chatgpt.com)
+*   The result is node embeddings (or graph-level embeddings) that capture both local structure and node features. [Distill+2SpringerOpen+2](https://distill.pub/2021/gnn-intro/?utm_source=chatgpt.com)
+*   GNNs are trained: weights are learned via backpropagation on tasks (e.g. node classification, link prediction). [SpringerOpen+2ACM Digital Library+2](https://journalofbigdata.springeropen.com/articles/10.1186/s40537-023-00876-4?utm_source=chatgpt.com)</p>
+<p>Key points:</p>
+<p>*   The architecture is dynamic (you train weights);
+*   The “graph” is the data, not the control flow of the system;
+*   It is broadly about representation learning over graph-structured data, not general program execution.</p>
+<p>### What is TiddlyWiki (Node.js version) and what “scale” means</p>
+<p>*   TiddlyWiki is a non-linear personal wiki / knowledge-management tool, built around “tiddlers” (small notes) that can interlink, be tagged, have fields, etc. [GitHub+2TiddlyWiki+2](https://github.com/TiddlyWiki/TiddlyWiki5?utm_source=chatgpt.com)
+*   Under Node.js, TiddlyWiki can run as a server, with the wiki contents stored as individual tiddler files, allowing querying over tiddlers, modular plugins, APIs, etc. [GitHub+3TiddlyWiki+3TiddlyWiki+3](https://tiddlywiki.com/static/TiddlyWiki%2520on%2520Node.js.html?utm_source=chatgpt.com)
+*   Internally, TiddlyWiki maintains data structures like `$tw.wiki`, which is a map (or associative map) of tiddlers, with operations for iteration, querying, caching, etc. [TiddlyWiki+1](https://tiddlywiki.com/dev/static/TiddlyWiki%2520Architecture.html?utm_source=chatgpt.com)
+*   TiddlyWiki is modular: many behaviors are implemented via modules, plugins, or tiddlers themselves. [TiddlyWiki+2TiddlyWiki+2](https://tiddlywiki.com/dev/?utm_source=chatgpt.com)
+*   In its “scale” scenario, one might imagine having many users, many tiddlers, complex interlinking, versioning, indexing, caching, etc.</p>
+<p>Thus, TiddlyWiki is fundamentally a knowledge base or content graph.</p>
+<p>* * *</p>
+<p>Comparing TiddlyWiki (at scale) to a GNN
+----------------------------------------</p>
+<p>We can ask: _Is TiddlyWiki a GNN?_ The short answer is: **not in its usual form**, but with extensions, some analogous behaviors might be emulated. Below is a more nuanced breakdown.</p>
+<p>| Aspect | TiddlyWiki approach / behavior | GNN canonical behavior | Similarities / mismatch |
+| --- | --- | --- | --- |
+| **Graph structure** | The tiddlers and their interlinks (via tags, references, fields) form a graph (nodes = tiddlers, edges = references or link relations) | Graph is the core data — explicit nodes and (possibly weighted) edges | There is a _graph-like structure_ in TiddlyWiki data; so structurally there is a substrate of a graph. |
+| **Node features / attributes** | Each tiddler has fields, tags, textual content, metadata | Each node has a feature vector (often numeric) | You could take a tiddler&#x27;s metadata, word embeddings, tag encodings, etc., as features. So you can map TiddlyWiki’s fields to features. |
+| **Message passing / aggregation** | TiddlyWiki queries can traverse links (e.g., “get all tiddlers referencing this”, “forward/backlinks”) and aggregate or filter results, but these are deterministic logical queries, not learned aggregations | At each layer, nodes aggregate neighbor features using learnable transformations and then update their hidden state | The behavior of TiddlyWiki is more of a rule-based traversal rather than a learned propagation. In that sense, there is a superficial similarity (propagating over links), but no learning or parameterization. |
+| **Learning / training** | No built-in concept of weight learning or optimization | GNNs are trained, weights are optimized via gradient descent | This is a major divergence: TiddlyWiki is static (unless you build your own learning over it). |
+| **Nonlinearity &amp; expressiveness** | TiddlyWiki’s transformations are plugin logic, macros, filters — deterministic procedural code | GNN layers have nonlinear activations (ReLU, sigmoid, attention mechanisms) giving representational power | The procedural logic in TiddlyWiki is less flexible and less expressive than learned neural nets. You could simulate nonlinearity, but it’s not inherently built. |
+| **Scale &amp; performance concerns** | The performance of TiddlyWiki on huge tiddler graphs depends on caching, indexing, memoization, etc. | GNN scaling involves batching, sparse matrix operations, GPU/parallelization, neighborhood sampling, etc. | The scaling techniques differ substantially. TiddlyWiki is more akin to a database / graph engine than an ML architecture. |
+| **Purpose / goal** | Content retrieval, dynamic linking, user interaction, knowledge management | Feature learning, prediction, embedding, inference over graph data | The goals differ. TiddlyWiki is about structuring, querying, presenting information; a GNN is about learning patterns from graph-structured data. |</p>
+<p>So, while TiddlyWiki has a graph-like substrate (tiddlers + links), it lacks almost all of the machine-learning characteristics of a GNN: training, parameterized layers, learned aggregation, etc.</p>
+<p>* * *</p>
+<p>Could TiddlyWiki _be extended_ toward a GNN?
+--------------------------------------------</p>
+<p>If one were ambitious, you could imagine turning a large TiddlyWiki installation into a hybrid system that incorporates GNN-like features. Some thoughts:</p>
+<p>*   You could represent your tiddler graph explicitly and embed nodes via a GNN model (external ML layer). Then, use those embeddings inside TiddlyWiki, e.g., for autocompletion, similarity ranking, recommendation, contextual linking, dynamic query enhancements, etc.
+*   Plugins or modules could attach learned weights to links (i.e. edge weights) and perform neighborhood aggregation over tiddlers. For example, given a tiddler, you could fetch its k-hop neighbors, multiply neighbor embeddings by learned weights, and combine them to derive a new embedding.
+*   You could periodically (offline) train a GNN over the entire tiddler graph + features, then store the embeddings back into tiddlers or indexing structures. At runtime, queries might use embeddings (dot products) rather than pure link traversal.
+*   One challenge: incremental updates. TiddlyWiki is dynamic (users can add new tiddlers or links). A GNN would need to support dynamic updates or re-training, or at least incremental embedding updates.</p>
+<p>But even with those extensions, you’d be combining a content-graph system (TiddlyWiki) with a separate ML/embedding layer — it wouldn’t _be_ a GNN in itself, but would _use_ GNN techniques.</p>
+<p>* * *</p>
+<p>How “close” is it?
+------------------</p>
+<p>Putting it succinctly:</p>
+<p>*   **Structurally**, TiddlyWiki is somewhat close (has a graph of tiddlers/links, nodes with features) — it gives you one dimension of similarity.
+*   **Functionally**, it&#x27;s far from a GNN: no training, no learned propagation, no nonlinear embedding transformations.
+*   At **scale**, a pure TiddlyWiki architecture doesn&#x27;t incorporate the computational and algorithmic design patterns of GNNs (e.g. batching, efficient sparse aggregation, GPU-accelerated propagation).
+*   So I’d say it&#x27;s **not very close** in its native form. But you can build on top of it to incorporate GNN-like behavior.</p>
+<p>If you like, I can sketch a possible architecture for a “TiddlyWiki + GNN hybrid” to realize something akin to a “graphical neural wiki.” Would you like me to outline that?</p></div>
+    </details>
+</div>
+</body>
+</html>
