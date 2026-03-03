@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project scope and workflow planning</title>
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    details { border:1px solid #ddd; border-radius:4px; margin:.75em 0; }
+    summary { font-weight:bold; padding:.6em 1em; cursor:pointer; background:#f9f9f9; border-radius:4px; text-align:left; }
+    summary:hover { background:#f0eded; }
+    details[open] summary { border-bottom:1px solid #ddd; border-radius:4px 4px 0 0; }
+    .response { padding:1em 1.2em; line-height:1.6; text-align:left; }
+    .meta { font-size:.85em; color:#666; margin-bottom:1.5em; border-bottom:1px solid #eee; padding-bottom:.75em; }
+    .meta a { color:#8C1515; }
+  </style>
+</head>
+<body>
+<div class="container">
+  <nav>
+    <a href="../index.html">Home</a> |
+    <a href="../bio.html">Bio</a> |
+    <a href="../teaching.html">Teaching</a> |
+    <a href="../research.html">Research</a> |
+    <a href="../artifacts/index.html">Artifacts</a> |
+    <a href="index.html">Transcripts</a>
+  </nav>
+  <h1>Project scope and workflow planning</h1>
+  <div class="meta">
+    <strong>Created:</strong> 3/3/2026 15:01:03 &nbsp;|&nbsp; <strong>Updated:</strong> 3/3/2026 15:10:49<br>
+    <strong>Source:</strong> <a href="https://claude.ai/chat/7b70a3b2-87fa-46e9-b753-eac7e41c9a90">https://claude.ai/chat/7b70a3b2-87fa-46e9-b753-eac7e41c9a90</a>
+  </div>
+  <p><em>Exchanges shown newest first. Click a prompt to expand the response.</em></p>
+
+    <details>
+      <summary>generate as html</summary>
+      <div class="response"><p>````plaintext
+View: Check frontend design skill
+````</p>
+<p>````plaintext
+Create File: HTML version of the AIX architecture overview
+````</p>
+<p>````plaintext
+Present File: /mnt/user-data/outputs/AIX-Architecture-Overview.html
+````</p>
+<p>Dark terminal aesthetic — IBM Plex Mono throughout, schema rendered as a proper field block, tags color-coded by type, flow diagram shows the pipeline, build order and workflow as numbered steps. Renders cleanly in any browser.</p>
+<p>&gt; File: /mnt/user-data/outputs/AIX-Architecture-Overview.html</p>
+<p>---
+Powered by [Claude Exporter](https://www.ai-chat-exporter.net)</p></div>
+    </details>
+    <details>
+      <summary>exactly. thank you. not yet: write an overview of the architecture, and anticipated workflow, from conversation to ze...</summary>
+      <div class="response"><p>````plaintext
+View: Check for relevant skills
+````</p>
+<p>This is a markdown document, so I&#x27;ll write it directly as a `.md` file.</p>
+<p>````plaintext
+Create File: Architecture and workflow overview for the PKM/zettelkasten system
+````</p>
+<p>````plaintext
+Present File: /mnt/user-data/outputs/AIX-Architecture-Overview.md
+````</p>
+<p>Four layers, clean schema, MICA bridge explained, build order laid out. The table in the middle — MICA vs zettelkasten operating at different scales — is the conceptual core of why this two-layer approach makes sense.</p>
+<p>Ready to move to repo setup when you are.</p>
+<p>&gt; File: /mnt/user-data/outputs/AIX-Architecture-Overview.md</p></div>
+    </details>
+    <details>
+      <summary>backlinks and front-links are separte?</summary>
+      <div class="response"><p>Yes. In TiddlyWiki:</p>
+<p>- **Backlinks** — tiddlers that link *to* this one. Automatic, no maintenance. &quot;Who points at me?&quot;
+- **Forward links** (sometimes called &quot;links&quot;) — tiddlers this one links *to* via `[[wikilinks]]` in the text. Also automatic — TiddlyWiki parses them.</p>
+<p>Both are available without any manual field. The `$:/core` already tracks both directions. Plugins like **Stroll** or **TiddlyBlink** surface them nicely in the UI.</p>
+<p>So the `list` field is actually for a *different* purpose — ordered sequences, table of contents, that kind of thing. Not needed for link traversal.</p>
+<p>**Which means your schema is clean without it:**</p>
+<p>```
+title: CamelCaseTitle
+created: YYYYMMDDHHMMSS
+modified: YYYYMMDDHHMMSS
+tags: [domain tags] [semantic tags]
+type: text/x-markdown
+source-conversation: [ark ID or conversation title]
+text: [markdown content with [[wikilinks]] inline]
+```</p>
+<p>Forward and back links both work automatically from the `[[wikilinks]]` in text. No manual maintenance.</p>
+<p>Ready to move to repo setup and file generation?</p></div>
+    </details>
+    <details>
+      <summary>if links live in text, with context, that still means we may have to gather in a field a list of tiddlers to which th...</summary>
+      <div class="response"><p>Yes — that&#x27;s the `list` field, which TiddlyWiki uses natively to express explicit relationships. Different from `related` (which was freeform) — `list` is a proper TiddlyWiki field that plugins and macros can query.</p>
+<p>But there&#x27;s also the question of direction. TiddlyWiki can automatically surface *backlinks* — tiddlers that link *to* this one — without any manual field maintenance. So you may not need to manually curate outbound links in a field at all if the wiki does it for you.</p>
+<p>**Updated schema:**</p>
+<p>```
+title: CamelCaseTitle
+created: YYYYMMDDHHMMSS
+modified: YYYYMMDDHHMMSS
+tags: [domain tags] [semantic tags]
+type: text/x-markdown
+source-conversation: [ark ID or conversation title]
+list: TiddlerOne TiddlerTwo
+text: [markdown content with [[wikilinks]] inline]
+```</p>
+<p>Quick decision:</p>
+<p>````plaintext
+Tool: Generating ask_user_input_v0...
+````</p></div>
+    </details>
+    <details>
+      <summary>Q: Title convention? TiddlyWiki handles both but CamelCase auto-links.</summary>
+      <div class="response"><p>Perfect. That simplifies the schema — drop the `related` field entirely, links live in the text where they have context.</p>
+<p>**Final schema:**</p>
+<p>```
+title: CamelCaseTitle
+created: YYYYMMDDHHMMSS
+modified: YYYYMMDDHHMMSS
+tags: [domain tags] [semantic tags]
+type: text/x-markdown
+source-conversation: [ark ID or conversation title]
+text: [markdown content with [[wikilinks]] inline]
+```</p>
+<p>Lean and correct. Ready to move to repo setup.</p>
+<p>**Next step: GitHub repo + Node.js TiddlyWiki**</p>
+<p>The standard setup is `tiddlywiki` npm package, a initialized wiki folder, and a simple start script. I can produce:</p>
+<p>- A `README.md` with the exact terminal commands to get it running
+- A `.gitignore` appropriate for a TiddlyWiki Node.js repo
+- The schema documented as the first actual tiddler (`TiddlerSchema.tid`)</p>
+<p>Do you want me to generate those three files now, or do you want to talk through the repo structure first?</p></div>
+    </details>
+    <details>
+      <summary>Q: The doc proposes linking every tiddler back to its source conversation (the MICA bridge). Do you want that field i...</summary>
+      <div class="response"><p>Good catch — `type: text/markdown` is the TiddlyWiki content-type field, not a semantic category. What the doc was calling &quot;type&quot; should just be a tag: `concept`, `question`, `method`, etc.</p>
+<p>**Here&#x27;s the proposed schema:**</p>
+<p>```
+title: 
+created: YYYYMMDDHHMMSS
+modified: YYYYMMDDHHMMSS
+tags: [domain tags] [semantic tags: concept|question|method|insight|revision]
+type: text/x-markdown
+source-conversation: [ark ID or conversation title]
+related: [linked tiddler titles]
+text: [content]
+```</p>
+<p>Clean, standard TiddlyWiki-compatible, with the MICA bridge baked in. The semantic &quot;type&quot; from the doc becomes just another tag, living alongside domain tags like `MICA` or `PKM`.</p>
+<p>Two more things to nail down before we move to repo setup:</p>
+<p>````plaintext
+Tool: Generating ask_user_input_v0...
+````</p></div>
+    </details>
+    <details>
+      <summary>Q: Does the TiddlyWiki exist yet, or does that need to be created too?</summary>
+      <div class="response"><p>Good. Node.js + GitHub is the right call — gives you version control on the wiki itself, which means your knowledge base has a history.</p>
+<p>**Revised scope, in order:**</p>
+<p>1. **Schema** — finalize tiddler fields and tag taxonomy (we&#x27;re doing this now)
+2. **Repo setup** — GitHub repo with Node.js TiddlyWiki server configured
+3. **Seed tiddlers** — generate `.tid` files from this document (the first content)
+4. **Generator script** — markdown synthesis → `.tid` file, usable at end of any conversation
+5. **Workflow integration** — this becomes the standard alongside `/ark`</p>
+<p>---</p>
+<p>**On schema — a few design questions before I draft it:**</p>
+<p>````plaintext
+Tool: Generating ask_user_input_v0...
+````</p></div>
+    </details>
+    <details>
+      <summary>&gt; File:</summary>
+      <div class="response"><p>This document describes a PKM architecture with four layers: Claude conversations → SharePoint archive → TiddlyWiki zettelkasten → automated `.tid` file generation. The core ambition is closing the gap between &quot;insight happens in conversation&quot; and &quot;insight lives in a linked knowledge network&quot; — no copy-paste, no evaporation.</p>
+<p>**What you want to build, concretely:**
+- A TiddlyWiki zettelkasten (the AIX wiki) with a defined tiddler schema
+- A script (Claude Code / Node.js) that converts a markdown synthesis into a `.tid` file
+- A workflow where end-of-conversation → `/ark` + tiddler generation happen together</p>
+<p>**What I need to understand before scoping this:**</p>
+<p>````plaintext
+Tool: Generating ask_user_input_v0...
+````</p></div>
+    </details>
+</div>
+</body>
+</html>
