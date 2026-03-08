@@ -1,0 +1,710 @@
+# Teaching history course catalog
+
+**Created:** 9/24/2025 14:25:55  
+**Updated:** 9/24/2025 14:46:33  
+**Exported:** 9/24/2025 15:33:59  
+**Link:** [https://claude.ai/chat/0c16598a-293b-44e5-ab66-ee3184d7e89a](https://claude.ai/chat/0c16598a-293b-44e5-ab66-ee3184d7e89a)  
+
+## Prompt:
+9/24/2025, 2:25:57 PM
+
+> File: 
+
+that is my teaching history! can you parse it into a list of courses, sorted by subject (IDT, COM, POS, SSC, Other), and for each indicate first and last semester taught.
+
+
+
+## Response:
+9/24/2025, 2:28:14 PM
+
+I'll analyze your impressive teaching history and organize it by subject area. Let me parse through this data systematically.
+
+**Analyzed data**
+
+````javascript
+// Parse the teaching history data
+const data = `Fall 1997	1607	POS 435	Amer Politics & Communca Tech	4.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Fall 1995	1560	POS 435	Amer Politics & Communca Tech	4.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Spring 1993	2506	POS 435	Amer Politics & Communca Tech	4.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Spring 1999	2189	POS 310	American Politics	4.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Fall 1998	1156	POS 310	American Politics	4.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Spring 1998	2203	POS 310	American Politics	4.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Fall 1997	1165	POS 310	American Politics	4.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Spring 1997	2214	POS 310	American Politics	4.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Spring 1997	2585	POS 310	American Politics	4.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Fall 1996	1177	POS 310	American Politics	4.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Spring 1996	2245	POS 310	American Politics	4.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Fall 1995	1190	POS 310	American Politics	4.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Spring 1995	2259	POS 310	American Politics	4.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Spring 1995	2559	POS 310	American Politics	4.000	Undergraduate	Inmate Program		No	Active
+Spring 1994	2286	POS 310	American Politics	4.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Spring 2026	2671	POS 110	American Public Policy	4.000	Undergraduate	Marcy Campus (Utica)	Classroom	No	Active
+Fall 2022	3379	POS 110	American Public Policy	4.000	Undergraduate	Marcy Campus (Utica)	Hybrid	No	Active
+Fall 2022	3395	POS 110	American Public Policy	4.000	Undergraduate	Marcy Campus (Utica)	Hybrid	No	Active
+Spring 2016	2641	POS 110	American Public Policy	4.000	Undergraduate	Internet/Web	On Line	No	Active
+Spring 2016	2642	POS 110	American Public Policy	4.000	Undergraduate	Internet/Web	On Line	No	Active
+Spring 2016	2643	POS 110	American Public Policy	4.000	Undergraduate	Marcy Campus (Utica)	Hybrid	No	Active
+Spring 2016	2644	POS 110	American Public Policy	4.000	Undergraduate	Marcy Campus (Utica)	Hybrid	No	Active
+Fall 2011	1799	POS 110	American Public Policy	4.000	Undergraduate	Marcy Campus (Utica)	Hybrid	No	Active
+Fall 2009	1563	POS 110	American Public Policy	4.000	Undergraduate	Marcy Campus (Utica)	Hybrid	No	Active
+Spring 2005	2675	POS 110	American Public Policy	4.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Fall 2002	1715	POS 310	American Public Policy	4.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Spring 2002	2158	POS 310	American Public Policy	4.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Fall 2001	1133	POS 310	American Public Policy	4.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Fall 1993	1237	POS 310	American Public Policy	4.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Spring 1993	2355	POS 310	American Public Policy	4.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Fall 1992	1289	POS 310	American Public Policy	4.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Spring 1992	2487	POS 310	American Public Policy	4.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Fall 1991	1358	POS 310	American Public Policy	4.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Fall 2013	1304	COM 308	Analytical & Research Writing	4.000	Undergraduate	Internet/Web	On Line	No	Active
+Spring 1992	2488	POS 400	Choosng Presidentl Cand: 1992	4.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Spring 2013	2027	COM 380	Communication Theory	4.000	Undergraduate	Marcy Campus (Utica)	Hybrid	No	Active
+Spring 2012	2043	COM 380	Communication Theory	4.000	Undergraduate	Marcy Campus (Utica)	Hybrid	No	Active
+Spring 2012	2727	COM 411	Communicatng on Computr Netwrk	4.000	Undergraduate	Marcy Campus (Utica)	Hybrid	No	Active
+Fall 2016	1043	COM 400	Computer Software Documentatn	4.000	Undergraduate	Internet/Web	On Line	No	Active
+Summer 2007	3149	CMT 600	Continuous Registration	1.000	Graduate	Marcy Campus (Utica)		No	Active
+Summer 2016	3006	CMT 600	Continuous Registration - IDT	1.000	Graduate	Marcy Campus (Utica)	By Appointment	No	Active
+Summer 2015	3009	CMT 600	Continuous Registration - IDT	1.000	Graduate	Marcy Campus (Utica)	By Appointment	No	Active
+Spring 2016	2137	CMT 600	Continuous Registration-IDT	1.000	Graduate	Marcy Campus (Utica)	On Line	No	Active
+Spring 2026	2881	COM 375	Design/Writing Interactiv Text	4.000	Undergraduate	Marcy Campus (Utica)	HyFlex-Student Choice Blended	No	Active
+Spring 2026	2883	COM 375	Design/Writing Interactiv Text	4.000	Undergraduate	Internet/Web	Synchronous Online	No	Cancelled
+Spring 2025	2704	COM 375	Design/Writing Interactiv Text	4.000	Undergraduate	Marcy Campus (Utica)	HyFlex-Student Choice Blended	No	Active
+Summer 2024	3057	COM 375	Design/Writing Interactiv Text	4.000	Undergraduate	Internet/Web	Asynchronous Online	No	Active
+Spring 2024	3475	COM 375	Design/Writing Interactiv Text	4.000	Undergraduate	Marcy Campus (Utica)	HyFlex-Student Choice Blended	No	Active
+Summer 2023	3071	COM 375	Design/Writing Interactiv Text	4.000	Undergraduate	Internet/Web	Asynchronous Online	No	Active
+Fall 2022	3380	COM 375	Design/Writing Interactiv Text	4.000	Undergraduate	Marcy Campus (Utica)	HyFlex-Student Choice Blended	No	Active
+Spring 2018	2410	COM 375	Design/Writing Interactiv Text	4.000	Undergraduate	Marcy Campus (Utica)	Hybrid	No	Active
+Spring 2017	2477	COM 375	Design/Writing Interactiv Text	4.000	Undergraduate	Marcy Campus (Utica)	Hybrid	No	Active
+Summer 2016	3117	COM 375	Design/Writing Interactiv Text	4.000	Undergraduate	Internet/Web	On Line	No	Active
+Spring 2016	2650	COM 375	Design/Writing Interactiv Text	4.000	Undergraduate	Marcy Campus (Utica)	Hybrid	No	Active
+Spring 2016	2812	COM 375	Design/Writing Interactiv Text	4.000	Undergraduate	Marcy Campus (Utica)	Hybrid	No	Active
+Spring 2016	2813	COM 375	Design/Writing Interactiv Text	4.000	Undergraduate	Internet/Web	On Line	No	Active
+Spring 2025	2793	IDT 575	Designing/Writing Interac Text	3.000	Graduate	Internet/Web	Asynchronous Online	No	Active
+Spring 2024	3567	IDT 575	Designing/Writing Interac Text	3.000	Graduate	Marcy Campus (Utica)	HyFlex-Student Choice Blended	No	Active
+Spring 2023	3426	IDT 575	Designing/Writing Interac Text	3.000	Graduate	Internet/Web	Asynchronous Online	No	Active
+Spring 2018	3766	IDT 575	Designing/Writing Interac Text	3.000	Graduate	Internet/Web	On Line	No	Active
+Summer 2017	3117	IDT 575	Designing/Writing Interac Text	3.000	Graduate	Internet/Web	On Line	No	Active
+Spring 2017	3776	IDT 575	Designing/Writing Interac Text	3.000	Graduate	Internet/Web	On Line	No	Active
+Fall 2025	1159	COM 492	Digital Media Internship	2.000	Undergraduate	Marcy Campus (Utica)	By Appointment	No	Active
+Spring 2016	2420	COM 492	Digital Media Internship	2.000	Undergraduate	Marcy Campus (Utica)	By Appointment	No	Active
+Fall 2015	1475	COM 492	Digital Media Internship	2.000	Undergraduate	Marcy Campus (Utica)	By Appointment	No	Active
+Summer 2015	3057	COM 492	Digital Media Internship	2.000	Undergraduate	Internet/Web	On Line	No	Active
+Spring 2015	2517	COM 492	Digital Media Internship	2.000	Undergraduate	Marcy Campus (Utica)	By Appointment	No	Active
+Fall 2014	1548	COM 492	Digital Media Internship	2.000	Undergraduate	Marcy Campus (Utica)	By Appointment	No	Active
+Fall 2025	1679	COM 216	Digital Media/Info in Society	4.000	Undergraduate	Marcy Campus (Utica)	Classroom	No	Active
+Fall 2024	2015	COM 216	Digital Media/Info in Society	4.000	Undergraduate	Marcy Campus (Utica)	Hybrid	No	Active
+Fall 2024	2016	COM 216	Digital Media/Info in Society	4.000	Undergraduate	Marcy Campus (Utica)	Hybrid	No	Active
+Fall 2023	2160	COM 216	Digital Media/Info in Society	4.000	Undergraduate	Marcy Campus (Utica)	Hybrid	No	Active
+Fall 2023	2161	COM 216	Digital Media/Info in Society	4.000	Undergraduate	Marcy Campus (Utica)	Hybrid	No	Active
+Spring 2023	3395	COM 216	Digital Media/Info in Society	4.000	Undergraduate	Marcy Campus (Utica)	HyFlex-Student Choice Blended	No	Active
+Spring 2018	3533	COM 216	Digital Media/Info in Society	4.000	Undergraduate	Marcy Campus (Utica)	Hybrid	No	Active
+Spring 2017	3690	COM 216	Digital Media/Info in Society	4.000	Undergraduate	Marcy Campus (Utica)	Hybrid	No	Active
+Fall 2015	1826	COM 216	Digital Media/Info in Society	4.000	Undergraduate	Marcy Campus (Utica)	Hybrid	No	Active
+Spring 1997	2711	POS 410	Domestic Public Policy	4.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Summer 2016	3119	POS 340	Elections-Political Behavior	4.000	Undergraduate	Internet/Web	On Line	No	Cancelled
+Summer 2016	3120	POS 340	Elections-Political Behavior	4.000	Undergraduate	Internet/Web	On Line	No	Cancelled
+Summer 2016	3121	POS 340	Elections-Political Behavior	4.000	Undergraduate	Internet/Web	On Line	No	Cancelled
+Fall 2004	1641	POS 340	Elections-Political Behavior	4.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Fall 1996	1606	POS 340	Elections-Political Behavior	4.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Fall 1994	1567	POS 340	Elections-Political Behavior	4.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Fall 1992	1290	POS 340	Elections-Political Behavior	4.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Fall 1991	1361	POS 340	Elections-Political Behavior	4.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Fall 2024	2110	IDT 555	Ethical/Legal Issues Info Age	3.000	Graduate	Internet/Web	Asynchronous Online	No	Active
+Spring 2015	2656	IDT 555	Ethical/Legal Issues Info Age	3.000	Graduate	Internet/Web	On Line	No	Active
+Spring 2013	2689	IDT 555	Ethical/Legal Issues Info Age	3.000	Graduate	Internet/Web	On Line	No	Active
+Fall 2005	1669	IDT 555	Ethical/Legal Issues Info Age	3.000	Graduate	Marcy Campus (Utica)		No	Active
+Fall 2001	1701	IDT 555	Ethical/Legal Issues Info Age	3.000	Graduate	Marcy Campus (Utica)		No	Active
+Spring 2006	2131	GEN 499	General Studies Project	4.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Spring 1999	2425	GEN 499	General Studies Project	4.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Fall 2016	2144	COM 491	Independent Study/Communicatn	1.000	Undergraduate	Marcy Campus (Utica)	By Appointment	No	Active
+Spring 2016	2810	COM 491	Independent Study/Communicatn	4.000	Undergraduate	Marcy Campus (Utica)	By Appointment	No	Active
+Fall 2015	1752	COM 491	Independent Study/Communicatn	3.000	Undergraduate	Marcy Campus (Utica)	By Appointment	No	Active
+Fall 2013	1795	COM 491	Independent Study/Communicatn	2.000	Undergraduate	Marcy Campus (Utica)	By Appointment	No	Active
+Fall 2013	1796	COM 491	Independent Study/Communicatn	4.000	Undergraduate	Marcy Campus (Utica)	By Appointment	No	Active
+Summer 2007	3168	HIS 491	Independent Study/History	2.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Summer 2018	3131	IDT 591	Independent Study/Info Design	1.000	Graduate	Marcy Campus (Utica)	By Appointment	No	Active
+Summer 2017	3118	IDT 591	Independent Study/Info Design	1.000	Graduate	Internet/Web	By Appointment	No	Active
+Spring 2016	2862	IDT 591	Independent Study/Info Design	1.000	Graduate	Marcy Campus (Utica)	By Appointment	No	Active
+Fall 2015	1979	IDT 591	Independent Study/Info Design	3.000	Graduate	Marcy Campus (Utica)	By Appointment	No	Active
+Fall 2014	1849	IDT 591	Independent Study/Info Design	3.000	Graduate	Marcy Campus (Utica)	By Appointment	No	Active
+Spring 2014	2728	IDT 591	Independent Study/Info Design	3.000	Graduate	Marcy Campus (Utica)	By Appointment	No	Active
+Fall 2013	1771	IDT 591	Independent Study/Info Design	3.000	Graduate	Marcy Campus (Utica)	By Appointment	No	Active
+Fall 2006	1773	IDT 591	Independent Study/Info Design	1.000	Graduate	Marcy Campus (Utica)		No	Active
+Spring 2006	2724	IDT 591	Independent Study/Info Design	1.000	Graduate	Marcy Campus (Utica)		No	Active
+Fall 2005	1805	IDT 591	Independent Study/Info Design	1.000	Graduate	Marcy Campus (Utica)		No	Active
+Fall 2004	1743	IDT 591	Independent Study/Info Design	1.000	Graduate	Marcy Campus (Utica)		No	Active
+Spring 2022	3599	POS 491	Independent Study/Politicl Sci	4.000	Undergraduate	Marcy Campus (Utica)	By Appointment	No	Active
+Spring 2006	2744	POS 491	Independent Study/Politicl Sci	1.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Fall 2004	1739	POS 491	Independent Study/Politicl Sci	1.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Spring 2003	2765	POS 491	Independent Study/Politicl Sci	1.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Summer 2002	3181	POS 491	Independent Study/Politicl Sci	1.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Spring 1999	2736	POS 491	Independent Study/Politicl Sci	1.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Spring 1997	2712	POS 491	Independent Study/Politicl Sci	1.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Spring 1997	2713	POS 491	Independent Study/Politicl Sci	1.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Spring 1996	2748	POS 491	Independent Study/Politicl Sci	1.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Spring 1994	2654	POS 491	Independent Study/Politicl Sci	1.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Spring 1993	2645	POS 491	Independent Study/Politicl Sci	1.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Spring 1992	2597	POS 491	Independent Study/Politicl Sci	1.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Spring 1992	2598	POS 491	Independent Study/Politicl Sci	1.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Fall 2025	1862	IDT 507	Information Technologies	3.000	Graduate	Internet/Web	Asynchronous Online	No	Active
+Summer 2025	3232	IDT 507	Information Technologies	3.000	Graduate	Internet/Web	Asynchronous Online	No	Active
+Summer 2024	3141	IDT 507	Information Technologies	3.000	Graduate	Internet/Web	Asynchronous Online	No	Active
+Spring 2024	3451	IDT 507	Information Technologies	3.000	Graduate	Internet/Web	Asynchronous Online	No	Active
+Summer 2023	3219	IDT 507	Information Technologies	3.000	Graduate	Internet/Web	Asynchronous Online	No	Active
+Fall 2022	3381	IDT 507	Information Technologies	3.000	Graduate	Internet/Web	Asynchronous Online	No	Active
+Spring 2018	3822	IDT 507	Information Technologies	3.000	Graduate	Internet/Web	On Line	No	Active
+Spring 2017	3694	IDT 507	Information Technologies	3.000	Graduate	Internet/Web	On Line	No	Active
+Summer 2016	3150	IDT 507	Information Technologies	3.000	Graduate	Internet/Web	On Line	No	Active
+Fall 2015	1754	IDT 507	Information Technologies	3.000	Graduate	Internet/Web	On Line	No	Active
+Spring 2014	2615	IDT 507	Information Technologies	3.000	Graduate	Internet/Web	On Line	No	Active
+Spring 2014	2616	IDT 507	Information Technologies	3.000	Graduate	Internet/Web	On Line	No	Active
+Fall 2012	1703	IDT 507	Information Technologies	3.000	Graduate	Internet/Web	On Line	No	Active
+Fall 2012	1704	IDT 507	Information Technologies	3.000	Graduate	Internet/Web	On Line	No	Active
+Spring 2011	2651	IDT 507	Information Technologies	3.000	Graduate	Internet/Web	On Line	No	Active
+Spring 2011	2652	IDT 507	Information Technologies	3.000	Graduate	Internet/Web	On Line	No	Active
+Fall 2008	1529	IDT 507	Information Technologies	3.000	Graduate	Internet/Web	ANGEL On-line	No	Active
+Spring 2006	2516	IDT 507	Information Technologies	3.000	Graduate	Internet/Web		No	Active
+Spring 2005	2711	IDT 507	Information Technologies	3.000	Graduate	Marcy Campus (Utica)		No	Active
+Summer 2018	3135	IDT 592	Internship	1.000	Graduate	Internet/Web	On Line	No	Active
+Summer 2017	3142	IDT 592	Internship	1.000	Graduate	Marcy Campus (Utica)	By Appointment	No	Active
+Fall 2016	1607	IDT 592	Internship	1.000	Graduate	Internet/Web	By Appointment	No	Active
+Summer 2016	3059	IDT 592	Internship	1.000	Graduate	Marcy Campus (Utica)	By Appointment	No	Active
+Spring 2016	2508	IDT 592	Internship	1.000	Graduate	Marcy Campus (Utica)	By Appointment	No	Active
+Fall 2017	1278	COM 106	Intro to Digital Media&Design	4.000	Undergraduate	Marcy Campus (Utica)	Hybrid	No	Active
+Fall 2016	1323	COM 106	Intro to Digital Media&Design	4.000	Undergraduate	Marcy Campus (Utica)	Hybrid	No	Active
+Fall 2015	1347	COM 106	Intro to Digital Media&Design	4.000	Undergraduate	Marcy Campus (Utica)	Hybrid	No	Active
+Fall 2014	1388	COM 106	Intro to Digital Media&Design	4.000	Undergraduate	Marcy Campus (Utica)	Classroom	No	Active
+Fall 2013	1466	COM 106	Intro/Technical Communication	4.000	Undergraduate	Marcy Campus (Utica)	Classroom	No	Active
+Fall 2013	1793	COM 106	Intro/Technical Communication	4.000	Undergraduate	Marcy Campus (Utica)	Classroom	No	Active
+Fall 2012	1628	COM 106	Intro/Technical Communication	4.000	Undergraduate	Marcy Campus (Utica)	Hybrid	No	Active
+Fall 2011	1865	COM 106	Intro/Technical Communication	4.000	Undergraduate	Marcy Campus (Utica)	Hybrid	No	Active
+Fall 2009	1550	ECO 112	Macroeconomics	4.000	Undergraduate	Marcy Campus (Utica)	Classroom	No	Active
+Fall 1997	1216	SSC 362	Methods of Inquiry	4.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Fall 1996	1238	SSC 362	Methods of Inquiry	4.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Spring 1996	2030	SSC 362	Methods of Inquiry	4.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Fall 1995	1258	SSC 362	Methods of Inquiry	4.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Fall 1995	1425	SSC 362	Methods of Inquiry	0.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Fall 1995	1426	SSC 362	Methods of Inquiry	0.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Spring 1995	2032	SSC 362	Methods of Inquiry	4.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Spring 1995	2462	SSC 362	Methods of Inquiry	0.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Spring 1995	2463	SSC 362	Methods of Inquiry	0.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Fall 1994	1292	SSC 362	Methods of Inquiry	4.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Fall 1994	1568	SSC 362	Methods of Inquiry	0.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Fall 1994	1569	SSC 362	Methods of Inquiry	0.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Spring 1994	2036	SSC 362	Methods of Inquiry	4.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Spring 1994	2607	SSC 362	Methods of Inquiry	0.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Spring 1994	2608	SSC 362	Methods of Inquiry	0.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Fall 1993	1334	SSC 362	Methods of Inquiry	4.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Spring 1993	2043	SSC 362	Methods of Inquiry	4.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Fall 1992	1434	SSC 362	Methods of Inquiry	4.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Spring 1992	2057	SSC 362	Methods of Inquiry	4.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Fall 2009	1189	ECO 110	Microeconomics	4.000	Undergraduate	Marcy Campus (Utica)	Classroom	No	Active
+Fall 2009	1190	ECO 110	Microeconomics	4.000	Undergraduate	Marcy Campus (Utica)	Classroom	No	Active
+Summer 2016	3130	POS 262	Online Politics	4.000	Undergraduate	Internet/Web	On Line	No	Active
+Summer 2016	3131	POS 262	Online Politics	4.000	Undergraduate	Internet/Web	On Line	No	Active
+Summer 2016	3132	POS 262	Online Politics	4.000	Undergraduate	Internet/Web	On Line	No	Active
+Fall 2012	1762	POS 262	Online Politics	4.000	Undergraduate	Marcy Campus (Utica)	Hybrid	No	Active
+Spring 2011	2779	COM 262	Online Politics	4.000	Undergraduate	Internet/Web	On Line	No	Active
+Spring 2011	2780	POS 262	Online Politics	4.000	Undergraduate	Internet/Web	On Line	No	Active
+Fall 2006	1565	POS 262	Online Politics	4.000	Undergraduate	Internet/Web		No	Active
+Fall 2006	1566	COM 262	Online Politics	4.000	Undergraduate	Internet/Web		No	Active
+Summer 2003	3063	POS 492	Political Science Internship	4.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Summer 2002	3107	POS 492	Political Science Internship	4.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Summer 2001	3153	POS 492	Political Science Internship	4.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Summer 2025	3214	COM 499	Portfolio Review/Prof Devlpmnt	4.000	Undergraduate	Internet/Web	Asynchronous Online	No	Active
+Spring 2024	3559	IDT 553	Principles & Proj in New Media	3.000	Graduate	Internet/Web	Asynchronous Online	No	Active
+Summer 2023	3151	IDT 553	Principles & Proj in New Media	3.000	Graduate	Internet/Web	Asynchronous Online	No	Active
+Summer 2018	3063	IDT 553	Principles & Proj in New Media	3.000	Graduate	Internet/Web	On Line	No	Active
+Summer 2016	3029	IDT 553	Principles & Proj in New Media	3.000	Graduate	Internet/Web	On Line	No	Active
+Summer 2013	3125	IDT 553	Principles & Proj in New Media	3.000	Graduate	Internet/Web	On Line	No	Active
+Summer 2017	3024	IDT 553	Principles and Projects in New Media	3.000	Graduate	Internet/Web	On Line	No	Active
+Summer 2003	3088	POS 339	Public Opinion/Contemp Society	2.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Summer 2002	3148	POS 339	Public Opinion/Contemp Society	2.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Summer 2001	3152	POS 339	Public Opinion/Contemp Society	2.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Fall 2005	1070	COM 306	Report Writing/Tech Communcatn	4.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Fall 2013	1455	IDT 530	Research Methods for IDT	3.000	Graduate	Internet/Web	On Line	No	Active
+Spring 2018	3696	IDT 585	Seminar/Emerging Info Technlog	3.000	Graduate	Internet/Web	On Line	No	Active
+Summer 2016	3116	IDT 585	Seminar/Emerging Info Technlog	3.000	Graduate	Internet/Web	On Line	No	Active
+Fall 2013	1648	IDT 585
+````
+
+
+
+## Prompt:
+9/24/2025, 2:28:33 PM
+
+Continue
+
+
+
+## Response:
+9/24/2025, 2:30:51 PM
+
+
+
+**Analyzed data**
+
+````javascript
+// Let me parse the complete data properly
+const rawData = `Fall 1997	1607	POS 435	Amer Politics & Communca Tech	4.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Fall 1995	1560	POS 435	Amer Politics & Communca Tech	4.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Spring 1993	2506	POS 435	Amer Politics & Communca Tech	4.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Spring 1999	2189	POS 310	American Politics	4.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Fall 1998	1156	POS 310	American Politics	4.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Spring 1998	2203	POS 310	American Politics	4.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Fall 1997	1165	POS 310	American Politics	4.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Spring 1997	2214	POS 310	American Politics	4.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Spring 1997	2585	POS 310	American Politics	4.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Fall 1996	1177	POS 310	American Politics	4.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Spring 1996	2245	POS 310	American Politics	4.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Fall 1995	1190	POS 310	American Politics	4.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Spring 1995	2259	POS 310	American Politics	4.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Spring 1995	2559	POS 310	American Politics	4.000	Undergraduate	Inmate Program		No	Active
+Spring 1994	2286	POS 310	American Politics	4.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Spring 2026	2671	POS 110	American Public Policy	4.000	Undergraduate	Marcy Campus (Utica)	Classroom	No	Active
+Fall 2022	3379	POS 110	American Public Policy	4.000	Undergraduate	Marcy Campus (Utica)	Hybrid	No	Active
+Fall 2022	3395	POS 110	American Public Policy	4.000	Undergraduate	Marcy Campus (Utica)	Hybrid	No	Active
+Spring 2016	2641	POS 110	American Public Policy	4.000	Undergraduate	Internet/Web	On Line	No	Active
+Spring 2016	2642	POS 110	American Public Policy	4.000	Undergraduate	Internet/Web	On Line	No	Active
+Spring 2016	2643	POS 110	American Public Policy	4.000	Undergraduate	Marcy Campus (Utica)	Hybrid	No	Active
+Spring 2016	2644	POS 110	American Public Policy	4.000	Undergraduate	Marcy Campus (Utica)	Hybrid	No	Active
+Fall 2011	1799	POS 110	American Public Policy	4.000	Undergraduate	Marcy Campus (Utica)	Hybrid	No	Active
+Fall 2009	1563	POS 110	American Public Policy	4.000	Undergraduate	Marcy Campus (Utica)	Hybrid	No	Active
+Spring 2005	2675	POS 110	American Public Policy	4.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Fall 2002	1715	POS 310	American Public Policy	4.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Spring 2002	2158	POS 310	American Public Policy	4.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Fall 2001	1133	POS 310	American Public Policy	4.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Fall 1993	1237	POS 310	American Public Policy	4.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Spring 1993	2355	POS 310	American Public Policy	4.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Fall 1992	1289	POS 310	American Public Policy	4.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Spring 1992	2487	POS 310	American Public Policy	4.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Fall 1991	1358	POS 310	American Public Policy	4.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Fall 2013	1304	COM 308	Analytical & Research Writing	4.000	Undergraduate	Internet/Web	On Line	No	Active
+Spring 1992	2488	POS 400	Choosng Presidentl Cand: 1992	4.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Spring 2013	2027	COM 380	Communication Theory	4.000	Undergraduate	Marcy Campus (Utica)	Hybrid	No	Active
+Spring 2012	2043	COM 380	Communication Theory	4.000	Undergraduate	Marcy Campus (Utica)	Hybrid	No	Active
+Spring 2012	2727	COM 411	Communicatng on Computr Netwrk	4.000	Undergraduate	Marcy Campus (Utica)	Hybrid	No	Active
+Fall 2016	1043	COM 400	Computer Software Documentatn	4.000	Undergraduate	Internet/Web	On Line	No	Active
+Summer 2007	3149	CMT 600	Continuous Registration	1.000	Graduate	Marcy Campus (Utica)		No	Active
+Summer 2016	3006	CMT 600	Continuous Registration - IDT	1.000	Graduate	Marcy Campus (Utica)	By Appointment	No	Active
+Summer 2015	3009	CMT 600	Continuous Registration - IDT	1.000	Graduate	Marcy Campus (Utica)	By Appointment	No	Active
+Spring 2016	2137	CMT 600	Continuous Registration-IDT	1.000	Graduate	Marcy Campus (Utica)	On Line	No	Active
+Spring 2026	2881	COM 375	Design/Writing Interactiv Text	4.000	Undergraduate	Marcy Campus (Utica)	HyFlex-Student Choice Blended	No	Active
+Spring 2026	2883	COM 375	Design/Writing Interactiv Text	4.000	Undergraduate	Internet/Web	Synchronous Online	No	Cancelled
+Spring 2025	2704	COM 375	Design/Writing Interactiv Text	4.000	Undergraduate	Marcy Campus (Utica)	HyFlex-Student Choice Blended	No	Active
+Summer 2024	3057	COM 375	Design/Writing Interactiv Text	4.000	Undergraduate	Internet/Web	Asynchronous Online	No	Active
+Spring 2024	3475	COM 375	Design/Writing Interactiv Text	4.000	Undergraduate	Marcy Campus (Utica)	HyFlex-Student Choice Blended	No	Active
+Summer 2023	3071	COM 375	Design/Writing Interactiv Text	4.000	Undergraduate	Internet/Web	Asynchronous Online	No	Active
+Fall 2022	3380	COM 375	Design/Writing Interactiv Text	4.000	Undergraduate	Marcy Campus (Utica)	HyFlex-Student Choice Blended	No	Active
+Spring 2018	2410	COM 375	Design/Writing Interactiv Text	4.000	Undergraduate	Marcy Campus (Utica)	Hybrid	No	Active
+Spring 2017	2477	COM 375	Design/Writing Interactiv Text	4.000	Undergraduate	Marcy Campus (Utica)	Hybrid	No	Active
+Summer 2016	3117	COM 375	Design/Writing Interactiv Text	4.000	Undergraduate	Internet/Web	On Line	No	Active
+Spring 2016	2650	COM 375	Design/Writing Interactiv Text	4.000	Undergraduate	Marcy Campus (Utica)	Hybrid	No	Active
+Spring 2016	2812	COM 375	Design/Writing Interactiv Text	4.000	Undergraduate	Marcy Campus (Utica)	Hybrid	No	Active
+Spring 2016	2813	COM 375	Design/Writing Interactiv Text	4.000	Undergraduate	Internet/Web	On Line	No	Active
+Spring 2025	2793	IDT 575	Designing/Writing Interac Text	3.000	Graduate	Internet/Web	Asynchronous Online	No	Active
+Spring 2024	3567	IDT 575	Designing/Writing Interac Text	3.000	Graduate	Marcy Campus (Utica)	HyFlex-Student Choice Blended	No	Active
+Spring 2023	3426	IDT 575	Designing/Writing Interac Text	3.000	Graduate	Internet/Web	Asynchronous Online	No	Active
+Spring 2018	3766	IDT 575	Designing/Writing Interac Text	3.000	Graduate	Internet/Web	On Line	No	Active
+Summer 2017	3117	IDT 575	Designing/Writing Interac Text	3.000	Graduate	Internet/Web	On Line	No	Active
+Spring 2017	3776	IDT 575	Designing/Writing Interac Text	3.000	Graduate	Internet/Web	On Line	No	Active
+Fall 2025	1159	COM 492	Digital Media Internship	2.000	Undergraduate	Marcy Campus (Utica)	By Appointment	No	Active
+Spring 2016	2420	COM 492	Digital Media Internship	2.000	Undergraduate	Marcy Campus (Utica)	By Appointment	No	Active
+Fall 2015	1475	COM 492	Digital Media Internship	2.000	Undergraduate	Marcy Campus (Utica)	By Appointment	No	Active
+Summer 2015	3057	COM 492	Digital Media Internship	2.000	Undergraduate	Internet/Web	On Line	No	Active
+Spring 2015	2517	COM 492	Digital Media Internship	2.000	Undergraduate	Marcy Campus (Utica)	By Appointment	No	Active
+Fall 2014	1548	COM 492	Digital Media Internship	2.000	Undergraduate	Marcy Campus (Utica)	By Appointment	No	Active
+Fall 2025	1679	COM 216	Digital Media/Info in Society	4.000	Undergraduate	Marcy Campus (Utica)	Classroom	No	Active
+Fall 2024	2015	COM 216	Digital Media/Info in Society	4.000	Undergraduate	Marcy Campus (Utica)	Hybrid	No	Active
+Fall 2024	2016	COM 216	Digital Media/Info in Society	4.000	Undergraduate	Marcy Campus (Utica)	Hybrid	No	Active
+Fall 2023	2160	COM 216	Digital Media/Info in Society	4.000	Undergraduate	Marcy Campus (Utica)	Hybrid	No	Active
+Fall 2023	2161	COM 216	Digital Media/Info in Society	4.000	Undergraduate	Marcy Campus (Utica)	Hybrid	No	Active
+Spring 2023	3395	COM 216	Digital Media/Info in Society	4.000	Undergraduate	Marcy Campus (Utica)	HyFlex-Student Choice Blended	No	Active
+Spring 2018	3533	COM 216	Digital Media/Info in Society	4.000	Undergraduate	Marcy Campus (Utica)	Hybrid	No	Active
+Spring 2017	3690	COM 216	Digital Media/Info in Society	4.000	Undergraduate	Marcy Campus (Utica)	Hybrid	No	Active
+Fall 2015	1826	COM 216	Digital Media/Info in Society	4.000	Undergraduate	Marcy Campus (Utica)	Hybrid	No	Active
+Spring 1997	2711	POS 410	Domestic Public Policy	4.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Summer 2016	3119	POS 340	Elections-Political Behavior	4.000	Undergraduate	Internet/Web	On Line	No	Cancelled
+Summer 2016	3120	POS 340	Elections-Political Behavior	4.000	Undergraduate	Internet/Web	On Line	No	Cancelled
+Summer 2016	3121	POS 340	Elections-Political Behavior	4.000	Undergraduate	Internet/Web	On Line	No	Cancelled
+Fall 2004	1641	POS 340	Elections-Political Behavior	4.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Fall 1996	1606	POS 340	Elections-Political Behavior	4.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Fall 1994	1567	POS 340	Elections-Political Behavior	4.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Fall 1992	1290	POS 340	Elections-Political Behavior	4.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Fall 1991	1361	POS 340	Elections-Political Behavior	4.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Fall 2024	2110	IDT 555	Ethical/Legal Issues Info Age	3.000	Graduate	Internet/Web	Asynchronous Online	No	Active
+Spring 2015	2656	IDT 555	Ethical/Legal Issues Info Age	3.000	Graduate	Internet/Web	On Line	No	Active
+Spring 2013	2689	IDT 555	Ethical/Legal Issues Info Age	3.000	Graduate	Internet/Web	On Line	No	Active
+Fall 2005	1669	IDT 555	Ethical/Legal Issues Info Age	3.000	Graduate	Marcy Campus (Utica)		No	Active
+Fall 2001	1701	IDT 555	Ethical/Legal Issues Info Age	3.000	Graduate	Marcy Campus (Utica)		No	Active
+Spring 2006	2131	GEN 499	General Studies Project	4.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Spring 1999	2425	GEN 499	General Studies Project	4.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Fall 2016	2144	COM 491	Independent Study/Communicatn	1.000	Undergraduate	Marcy Campus (Utica)	By Appointment	No	Active
+Spring 2016	2810	COM 491	Independent Study/Communicatn	4.000	Undergraduate	Marcy Campus (Utica)	By Appointment	No	Active
+Fall 2015	1752	COM 491	Independent Study/Communicatn	3.000	Undergraduate	Marcy Campus (Utica)	By Appointment	No	Active
+Fall 2013	1795	COM 491	Independent Study/Communicatn	2.000	Undergraduate	Marcy Campus (Utica)	By Appointment	No	Active
+Fall 2013	1796	COM 491	Independent Study/Communicatn	4.000	Undergraduate	Marcy Campus (Utica)	By Appointment	No	Active
+Summer 2007	3168	HIS 491	Independent Study/History	2.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Summer 2018	3131	IDT 591	Independent Study/Info Design	1.000	Graduate	Marcy Campus (Utica)	By Appointment	No	Active
+Summer 2017	3118	IDT 591	Independent Study/Info Design	1.000	Graduate	Internet/Web	By Appointment	No	Active
+Spring 2016	2862	IDT 591	Independent Study/Info Design	1.000	Graduate	Marcy Campus (Utica)	By Appointment	No	Active
+Fall 2015	1979	IDT 591	Independent Study/Info Design	3.000	Graduate	Marcy Campus (Utica)	By Appointment	No	Active
+Fall 2014	1849	IDT 591	Independent Study/Info Design	3.000	Graduate	Marcy Campus (Utica)	By Appointment	No	Active
+Spring 2014	2728	IDT 591	Independent Study/Info Design	3.000	Graduate	Marcy Campus (Utica)	By Appointment	No	Active
+Fall 2013	1771	IDT 591	Independent Study/Info Design	3.000	Graduate	Marcy Campus (Utica)	By Appointment	No	Active
+Fall 2006	1773	IDT 591	Independent Study/Info Design	1.000	Graduate	Marcy Campus (Utica)		No	Active
+Spring 2006	2724	IDT 591	Independent Study/Info Design	1.000	Graduate	Marcy Campus (Utica)		No	Active
+Fall 2005	1805	IDT 591	Independent Study/Info Design	1.000	Graduate	Marcy Campus (Utica)		No	Active
+Fall 2004	1743	IDT 591	Independent Study/Info Design	1.000	Graduate	Marcy Campus (Utica)		No	Active
+Spring 2022	3599	POS 491	Independent Study/Politicl Sci	4.000	Undergraduate	Marcy Campus (Utica)	By Appointment	No	Active
+Spring 2006	2744	POS 491	Independent Study/Politicl Sci	1.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Fall 2004	1739	POS 491	Independent Study/Politicl Sci	1.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Spring 2003	2765	POS 491	Independent Study/Politicl Sci	1.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Summer 2002	3181	POS 491	Independent Study/Politicl Sci	1.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Spring 1999	2736	POS 491	Independent Study/Politicl Sci	1.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Spring 1997	2712	POS 491	Independent Study/Politicl Sci	1.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Spring 1997	2713	POS 491	Independent Study/Politicl Sci	1.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Spring 1996	2748	POS 491	Independent Study/Politicl Sci	1.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Spring 1994	2654	POS 491	Independent Study/Politicl Sci	1.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Spring 1993	2645	POS 491	Independent Study/Politicl Sci	1.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Spring 1992	2597	POS 491	Independent Study/Politicl Sci	1.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Spring 1992	2598	POS 491	Independent Study/Politicl Sci	1.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Fall 2025	1862	IDT 507	Information Technologies	3.000	Graduate	Internet/Web	Asynchronous Online	No	Active
+Summer 2025	3232	IDT 507	Information Technologies	3.000	Graduate	Internet/Web	Asynchronous Online	No	Active
+Summer 2024	3141	IDT 507	Information Technologies	3.000	Graduate	Internet/Web	Asynchronous Online	No	Active
+Spring 2024	3451	IDT 507	Information Technologies	3.000	Graduate	Internet/Web	Asynchronous Online	No	Active
+Summer 2023	3219	IDT 507	Information Technologies	3.000	Graduate	Internet/Web	Asynchronous Online	No	Active
+Fall 2022	3381	IDT 507	Information Technologies	3.000	Graduate	Internet/Web	Asynchronous Online	No	Active
+Spring 2018	3822	IDT 507	Information Technologies	3.000	Graduate	Internet/Web	On Line	No	Active
+Spring 2017	3694	IDT 507	Information Technologies	3.000	Graduate	Internet/Web	On Line	No	Active
+Summer 2016	3150	IDT 507	Information Technologies	3.000	Graduate	Internet/Web	On Line	No	Active
+Fall 2015	1754	IDT 507	Information Technologies	3.000	Graduate	Internet/Web	On Line	No	Active
+Spring 2014	2615	IDT 507	Information Technologies	3.000	Graduate	Internet/Web	On Line	No	Active
+Spring 2014	2616	IDT 507	Information Technologies	3.000	Graduate	Internet/Web	On Line	No	Active
+Fall 2012	1703	IDT 507	Information Technologies	3.000	Graduate	Internet/Web	On Line	No	Active
+Fall 2012	1704	IDT 507	Information Technologies	3.000	Graduate	Internet/Web	On Line	No	Active
+Spring 2011	2651	IDT 507	Information Technologies	3.000	Graduate	Internet/Web	On Line	No	Active
+Spring 2011	2652	IDT 507	Information Technologies	3.000	Graduate	Internet/Web	On Line	No	Active
+Fall 2008	1529	IDT 507	Information Technologies	3.000	Graduate	Internet/Web	ANGEL On-line	No	Active
+Spring 2006	2516	IDT 507	Information Technologies	3.000	Graduate	Internet/Web		No	Active
+Spring 2005	2711	IDT 507	Information Technologies	3.000	Graduate	Marcy Campus (Utica)		No	Active
+Summer 2018	3135	IDT 592	Internship	1.000	Graduate	Internet/Web	On Line	No	Active
+Summer 2017	3142	IDT 592	Internship	1.000	Graduate	Marcy Campus (Utica)	By Appointment	No	Active
+Fall 2016	1607	IDT 592	Internship	1.000	Graduate	Internet/Web	By Appointment	No	Active
+Summer 2016	3059	IDT 592	Internship	1.000	Graduate	Marcy Campus (Utica)	By Appointment	No	Active
+Spring 2016	2508	IDT 592	Internship	1.000	Graduate	Marcy Campus (Utica)	By Appointment	No	Active
+Fall 2017	1278	COM 106	Intro to Digital Media&Design	4.000	Undergraduate	Marcy Campus (Utica)	Hybrid	No	Active
+Fall 2016	1323	COM 106	Intro to Digital Media&Design	4.000	Undergraduate	Marcy Campus (Utica)	Hybrid	No	Active
+Fall 2015	1347	COM 106	Intro to Digital Media&Design	4.000	Undergraduate	Marcy Campus (Utica)	Hybrid	No	Active
+Fall 2014	1388	COM 106	Intro to Digital Media&Design	4.000	Undergraduate	Marcy Campus (Utica)	Classroom	No	Active
+Fall 2013	1466	COM 106	Intro/Technical Communication	4.000	Undergraduate	Marcy Campus (Utica)	Classroom	No	Active
+Fall 2013	1793	COM 106	Intro/Technical Communication	4.000	Undergraduate	Marcy Campus (Utica)	Classroom	No	Active
+Fall 2012	1628	COM 106	Intro/Technical Communication	4.000	Undergraduate	Marcy Campus (Utica)	Hybrid	No	Active
+Fall 2011	1865	COM 106	Intro/Technical Communication	4.000	Undergraduate	Marcy Campus (Utica)	Hybrid	No	Active
+Fall 2009	1550	ECO 112	Macroeconomics	4.000	Undergraduate	Marcy Campus (Utica)	Classroom	No	Active
+Fall 1997	1216	SSC 362	Methods of Inquiry	4.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Fall 1996	1238	SSC 362	Methods of Inquiry	4.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Spring 1996	2030	SSC 362	Methods of Inquiry	4.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Fall 1995	1258	SSC 362	Methods of Inquiry	4.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Fall 1995	1425	SSC 362	Methods of Inquiry	0.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Fall 1995	1426	SSC 362	Methods of Inquiry	0.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Spring 1995	2032	SSC 362	Methods of Inquiry	4.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Spring 1995	2462	SSC 362	Methods of Inquiry	0.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Spring 1995	2463	SSC 362	Methods of Inquiry	0.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Fall 1994	1292	SSC 362	Methods of Inquiry	4.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Fall 1994	1568	SSC 362	Methods of Inquiry	0.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Fall 1994	1569	SSC 362	Methods of Inquiry	0.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Spring 1994	2036	SSC 362	Methods of Inquiry	4.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Spring 1994	2607	SSC 362	Methods of Inquiry	0.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Spring 1994	2608	SSC 362	Methods of Inquiry	0.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Fall 1993	1334	SSC 362	Methods of Inquiry	4.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Spring 1993	2043	SSC 362	Methods of Inquiry	4.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Fall 1992	1434	SSC 362	Methods of Inquiry	4.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Spring 1992	2057	SSC 362	Methods of Inquiry	4.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Fall 2009	1189	ECO 110	Microeconomics	4.000	Undergraduate	Marcy Campus (Utica)	Classroom	No	Active
+Fall 2009	1190	ECO 110	Microeconomics	4.000	Undergraduate	Marcy Campus (Utica)	Classroom	No	Active
+Summer 2016	3130	POS 262	Online Politics	4.000	Undergraduate	Internet/Web	On Line	No	Active
+Summer 2016	3131	POS 262	Online Politics	4.000	Undergraduate	Internet/Web	On Line	No	Active
+Summer 2016	3132	POS 262	Online Politics	4.000	Undergraduate	Internet/Web	On Line	No	Active
+Fall 2012	1762	POS 262	Online Politics	4.000	Undergraduate	Marcy Campus (Utica)	Hybrid	No	Active
+Spring 2011	2779	COM 262	Online Politics	4.000	Undergraduate	Internet/Web	On Line	No	Active
+Spring 2011	2780	POS 262	Online Politics	4.000	Undergraduate	Internet/Web	On Line	No	Active
+Fall 2006	1565	POS 262	Online Politics	4.000	Undergraduate	Internet/Web		No	Active
+Fall 2006	1566	COM 262	Online Politics	4.000	Undergraduate	Internet/Web		No	Active
+Summer 2003	3063	POS 492	Political Science Internship	4.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Summer 2002	3107	POS 492	Political Science Internship	4.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Summer 2001	3153	POS 492	Political Science Internship	4.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Summer 2025	3214	COM 499	Portfolio Review/Prof Devlpmnt	4.000	Undergraduate	Internet/Web	Asynchronous Online	No	Active
+Spring 2024	3559	IDT 553	Principles & Proj in New Media	3.000	Graduate	Internet/Web	Asynchronous Online	No	Active
+Summer 2023	3151	IDT 553	Principles & Proj in New Media	3.000	Graduate	Internet/Web	Asynchronous Online	No	Active
+Summer 2018	3063	IDT 553	Principles & Proj in New Media	3.000	Graduate	Internet/Web	On Line	No	Active
+Summer 2016	3029	IDT 553	Principles & Proj in New Media	3.000	Graduate	Internet/Web	On Line	No	Active
+Summer 2013	3125	IDT 553	Principles & Proj in New Media	3.000	Graduate	Internet/Web	On Line	No	Active
+Summer 2017	3024	IDT 553	Principles and Projects in New Media	3.000	Graduate	Internet/Web	On Line	No	Active
+Summer 2003	3088	POS 339	Public Opinion/Contemp Society	2.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Summer 2002	3148	POS 339	Public Opinion/Contemp Society	2.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Summer 2001	3152	POS 339	Public Opinion/Contemp Society	2.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Fall 2005	1070	COM 306	Report Writing/Tech Communcatn	4.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Fall 2013	1455	IDT 530	Research Methods for IDT	3.000	Graduate	Internet/Web	On Line	No	Active
+Spring 2018	3696	IDT 585	Seminar/Emerging Info Technlog	3.000	Graduate	Internet/Web	On Line	No	Active
+Summer 2016	3116	IDT 585	Seminar/Emerging Info Technlog	3.000	Graduate	Internet/Web	On Line	No	Active
+Fall 2013	1648	IDT 585	Seminar/Emerging Info Technlog	3.000	Graduate	Internet/Web	On
+````
+
+
+
+## Prompt:
+9/24/2025, 2:43:53 PM
+
+try this CommunicationsSenior Practicum/CommunicationReport Writing/Tech CommuncatnPortfolio Review/Prof DevlpmntOnline PoliticsIntro/Technical CommunicationIntro to Digital Media&DesignDigital Media/Info in SocietyDesign/Writing Interactiv TextComputer Software DocumentatnCommunicatng on Computr NetwrkCommunication TheoryAnalytical & Research WritingGeneral StudiesThemes/W Civ Since RenaissanceInformation Design & TechnologyWebsphere AnalysisVirtual Tmwrk & Knwldge MgmtTopics:Web Sphere E-ResearchTopics: Web Analysis TechniqusTopics: Projects In IDTTopic:Reading Contemp IssuesTopic:Interactive Text DesignTopic:Explr Dsgn of Info w/ AITopic:Desgn/Writ Interact TextTopic: The Web And Real LifeTopic: Research in AI & SocietTopic: Projects in IDTTopic: HypertextualityTopic: Hypertext WorkshopTopic: Digital NativesSeminar/Emerging Info TechnlogResearch Methods for IDTPrinciples and Projects in New MediaPrinciples & Proj in New MediaInformation TechnologiesEthical/Legal Issues Info AgeDesigning/Writing Interac TextPolitical ScienceTopics in Political ScienceTopic: The 1998 ElectionsTopic: Pres Nominating ProcessTopic: Politics Of AbortionTopic: Online PoliticsThe Politics of Life & DeathState & Local GovernmentPublic Opinion/Contemp SocietyOnline PoliticsElections-Political BehaviorDomestic Public PolicyChoosng Presidentl Cand: 1992American Public PolicyAmerican PoliticsAmer Politics & Communca TechSocial SciencesMethods of Inquiry
+
+
+
+## Response:
+9/24/2025, 2:43:58 PM
+
+I'll help you parse your teaching history into a well-organized list by subject area. Let me process this data systematically:
+
+**repl**
+
+*Request*
+
+````javascript
+{
+  "code": ""
+}
+````
+
+
+
+
+
+## Prompt:
+9/24/2025, 2:44:33 PM
+
+> File: 
+
+
+
+
+
+## Response:
+9/24/2025, 2:46:33 PM
+
+Now I'll parse your complete teaching history and organize it by subject area with first and last semesters taught for each course. Let me analyze the data:
+
+**Analyzed data**
+
+````javascript
+// Parse the original teaching history data
+const rawData = `Fall 1997	1607	POS 435	Amer Politics & Communca Tech	4.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Fall 1995	1560	POS 435	Amer Politics & Communca Tech	4.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Spring 1993	2506	POS 435	Amer Politics & Communca Tech	4.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Spring 1999	2189	POS 310	American Politics	4.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Fall 1998	1156	POS 310	American Politics	4.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Spring 1998	2203	POS 310	American Politics	4.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Fall 1997	1165	POS 310	American Politics	4.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Spring 1997	2214	POS 310	American Politics	4.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Spring 1997	2585	POS 310	American Politics	4.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Fall 1996	1177	POS 310	American Politics	4.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Spring 1996	2245	POS 310	American Politics	4.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Fall 1995	1190	POS 310	American Politics	4.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Spring 1995	2259	POS 310	American Politics	4.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Spring 1995	2559	POS 310	American Politics	4.000	Undergraduate	Inmate Program		No	Active
+Spring 1994	2286	POS 310	American Politics	4.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Spring 2026	2671	POS 110	American Public Policy	4.000	Undergraduate	Marcy Campus (Utica)	Classroom	No	Active
+Fall 2022	3379	POS 110	American Public Policy	4.000	Undergraduate	Marcy Campus (Utica)	Hybrid	No	Active
+Fall 2022	3395	POS 110	American Public Policy	4.000	Undergraduate	Marcy Campus (Utica)	Hybrid	No	Active
+Spring 2016	2641	POS 110	American Public Policy	4.000	Undergraduate	Internet/Web	On Line	No	Active
+Spring 2016	2642	POS 110	American Public Policy	4.000	Undergraduate	Internet/Web	On Line	No	Active
+Spring 2016	2643	POS 110	American Public Policy	4.000	Undergraduate	Marcy Campus (Utica)	Hybrid	No	Active
+Spring 2016	2644	POS 110	American Public Policy	4.000	Undergraduate	Marcy Campus (Utica)	Hybrid	No	Active
+Fall 2011	1799	POS 110	American Public Policy	4.000	Undergraduate	Marcy Campus (Utica)	Hybrid	No	Active
+Fall 2009	1563	POS 110	American Public Policy	4.000	Undergraduate	Marcy Campus (Utica)	Hybrid	No	Active
+Spring 2005	2675	POS 110	American Public Policy	4.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Fall 2002	1715	POS 310	American Public Policy	4.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Spring 2002	2158	POS 310	American Public Policy	4.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Fall 2001	1133	POS 310	American Public Policy	4.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Fall 1993	1237	POS 310	American Public Policy	4.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Spring 1993	2355	POS 310	American Public Policy	4.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Fall 1992	1289	POS 310	American Public Policy	4.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Spring 1992	2487	POS 310	American Public Policy	4.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Fall 1991	1358	POS 310	American Public Policy	4.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Fall 2013	1304	COM 308	Analytical & Research Writing	4.000	Undergraduate	Internet/Web	On Line	No	Active
+Spring 1992	2488	POS 400	Choosng Presidentl Cand: 1992	4.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Spring 2013	2027	COM 380	Communication Theory	4.000	Undergraduate	Marcy Campus (Utica)	Hybrid	No	Active
+Spring 2012	2043	COM 380	Communication Theory	4.000	Undergraduate	Marcy Campus (Utica)	Hybrid	No	Active
+Spring 2012	2727	COM 411	Communicatng on Computr Netwrk	4.000	Undergraduate	Marcy Campus (Utica)	Hybrid	No	Active
+Fall 2016	1043	COM 400	Computer Software Documentatn	4.000	Undergraduate	Internet/Web	On Line	No	Active
+Summer 2007	3149	CMT 600	Continuous Registration	1.000	Graduate	Marcy Campus (Utica)		No	Active
+Summer 2016	3006	CMT 600	Continuous Registration - IDT	1.000	Graduate	Marcy Campus (Utica)	By Appointment	No	Active
+Summer 2015	3009	CMT 600	Continuous Registration - IDT	1.000	Graduate	Marcy Campus (Utica)	By Appointment	No	Active
+Spring 2016	2137	CMT 600	Continuous Registration-IDT	1.000	Graduate	Marcy Campus (Utica)	On Line	No	Active
+Spring 2026	2881	COM 375	Design/Writing Interactiv Text	4.000	Undergraduate	Marcy Campus (Utica)	HyFlex-Student Choice Blended	No	Active
+Spring 2026	2883	COM 375	Design/Writing Interactiv Text	4.000	Undergraduate	Internet/Web	Synchronous Online	No	Cancelled
+Spring 2025	2704	COM 375	Design/Writing Interactiv Text	4.000	Undergraduate	Marcy Campus (Utica)	HyFlex-Student Choice Blended	No	Active
+Summer 2024	3057	COM 375	Design/Writing Interactiv Text	4.000	Undergraduate	Internet/Web	Asynchronous Online	No	Active
+Spring 2024	3475	COM 375	Design/Writing Interactiv Text	4.000	Undergraduate	Marcy Campus (Utica)	HyFlex-Student Choice Blended	No	Active
+Summer 2023	3071	COM 375	Design/Writing Interactiv Text	4.000	Undergraduate	Internet/Web	Asynchronous Online	No	Active
+Fall 2022	3380	COM 375	Design/Writing Interactiv Text	4.000	Undergraduate	Marcy Campus (Utica)	HyFlex-Student Choice Blended	No	Active
+Spring 2018	2410	COM 375	Design/Writing Interactiv Text	4.000	Undergraduate	Marcy Campus (Utica)	Hybrid	No	Active
+Spring 2017	2477	COM 375	Design/Writing Interactiv Text	4.000	Undergraduate	Marcy Campus (Utica)	Hybrid	No	Active
+Summer 2016	3117	COM 375	Design/Writing Interactiv Text	4.000	Undergraduate	Internet/Web	On Line	No	Active
+Spring 2016	2650	COM 375	Design/Writing Interactiv Text	4.000	Undergraduate	Marcy Campus (Utica)	Hybrid	No	Active
+Spring 2016	2812	COM 375	Design/Writing Interactiv Text	4.000	Undergraduate	Marcy Campus (Utica)	Hybrid	No	Active
+Spring 2016	2813	COM 375	Design/Writing Interactiv Text	4.000	Undergraduate	Internet/Web	On Line	No	Active
+Spring 2025	2793	IDT 575	Designing/Writing Interac Text	3.000	Graduate	Internet/Web	Asynchronous Online	No	Active
+Spring 2024	3567	IDT 575	Designing/Writing Interac Text	3.000	Graduate	Marcy Campus (Utica)	HyFlex-Student Choice Blended	No	Active
+Spring 2023	3426	IDT 575	Designing/Writing Interac Text	3.000	Graduate	Internet/Web	Asynchronous Online	No	Active
+Spring 2018	3766	IDT 575	Designing/Writing Interac Text	3.000	Graduate	Internet/Web	On Line	No	Active
+Summer 2017	3117	IDT 575	Designing/Writing Interac Text	3.000	Graduate	Internet/Web	On Line	No	Active
+Spring 2017	3776	IDT 575	Designing/Writing Interac Text	3.000	Graduate	Internet/Web	On Line	No	Active
+Fall 2025	1159	COM 492	Digital Media Internship	2.000	Undergraduate	Marcy Campus (Utica)	By Appointment	No	Active
+Spring 2016	2420	COM 492	Digital Media Internship	2.000	Undergraduate	Marcy Campus (Utica)	By Appointment	No	Active
+Fall 2015	1475	COM 492	Digital Media Internship	2.000	Undergraduate	Marcy Campus (Utica)	By Appointment	No	Active
+Summer 2015	3057	COM 492	Digital Media Internship	2.000	Undergraduate	Internet/Web	On Line	No	Active
+Spring 2015	2517	COM 492	Digital Media Internship	2.000	Undergraduate	Marcy Campus (Utica)	By Appointment	No	Active
+Fall 2014	1548	COM 492	Digital Media Internship	2.000	Undergraduate	Marcy Campus (Utica)	By Appointment	No	Active
+Fall 2025	1679	COM 216	Digital Media/Info in Society	4.000	Undergraduate	Marcy Campus (Utica)	Classroom	No	Active
+Fall 2024	2015	COM 216	Digital Media/Info in Society	4.000	Undergraduate	Marcy Campus (Utica)	Hybrid	No	Active
+Fall 2024	2016	COM 216	Digital Media/Info in Society	4.000	Undergraduate	Marcy Campus (Utica)	Hybrid	No	Active
+Fall 2023	2160	COM 216	Digital Media/Info in Society	4.000	Undergraduate	Marcy Campus (Utica)	Hybrid	No	Active
+Fall 2023	2161	COM 216	Digital Media/Info in Society	4.000	Undergraduate	Marcy Campus (Utica)	Hybrid	No	Active
+Spring 2023	3395	COM 216	Digital Media/Info in Society	4.000	Undergraduate	Marcy Campus (Utica)	HyFlex-Student Choice Blended	No	Active
+Spring 2018	3533	COM 216	Digital Media/Info in Society	4.000	Undergraduate	Marcy Campus (Utica)	Hybrid	No	Active
+Spring 2017	3690	COM 216	Digital Media/Info in Society	4.000	Undergraduate	Marcy Campus (Utica)	Hybrid	No	Active
+Fall 2015	1826	COM 216	Digital Media/Info in Society	4.000	Undergraduate	Marcy Campus (Utica)	Hybrid	No	Active
+Spring 1997	2711	POS 410	Domestic Public Policy	4.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Summer 2016	3119	POS 340	Elections-Political Behavior	4.000	Undergraduate	Internet/Web	On Line	No	Cancelled
+Summer 2016	3120	POS 340	Elections-Political Behavior	4.000	Undergraduate	Internet/Web	On Line	No	Cancelled
+Summer 2016	3121	POS 340	Elections-Political Behavior	4.000	Undergraduate	Internet/Web	On Line	No	Cancelled
+Fall 2004	1641	POS 340	Elections-Political Behavior	4.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Fall 1996	1606	POS 340	Elections-Political Behavior	4.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Fall 1994	1567	POS 340	Elections-Political Behavior	4.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Fall 1992	1290	POS 340	Elections-Political Behavior	4.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Fall 1991	1361	POS 340	Elections-Political Behavior	4.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Fall 2024	2110	IDT 555	Ethical/Legal Issues Info Age	3.000	Graduate	Internet/Web	Asynchronous Online	No	Active
+Spring 2015	2656	IDT 555	Ethical/Legal Issues Info Age	3.000	Graduate	Internet/Web	On Line	No	Active
+Spring 2013	2689	IDT 555	Ethical/Legal Issues Info Age	3.000	Graduate	Internet/Web	On Line	No	Active
+Fall 2005	1669	IDT 555	Ethical/Legal Issues Info Age	3.000	Graduate	Marcy Campus (Utica)		No	Active
+Fall 2001	1701	IDT 555	Ethical/Legal Issues Info Age	3.000	Graduate	Marcy Campus (Utica)		No	Active
+Spring 2006	2131	GEN 499	General Studies Project	4.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Spring 1999	2425	GEN 499	General Studies Project	4.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Fall 2016	2144	COM 491	Independent Study/Communicatn	1.000	Undergraduate	Marcy Campus (Utica)	By Appointment	No	Active
+Spring 2016	2810	COM 491	Independent Study/Communicatn	4.000	Undergraduate	Marcy Campus (Utica)	By Appointment	No	Active
+Fall 2015	1752	COM 491	Independent Study/Communicatn	3.000	Undergraduate	Marcy Campus (Utica)	By Appointment	No	Active
+Fall 2013	1795	COM 491	Independent Study/Communicatn	2.000	Undergraduate	Marcy Campus (Utica)	By Appointment	No	Active
+Fall 2013	1796	COM 491	Independent Study/Communicatn	4.000	Undergraduate	Marcy Campus (Utica)	By Appointment	No	Active
+Summer 2007	3168	HIS 491	Independent Study/History	2.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Summer 2018	3131	IDT 591	Independent Study/Info Design	1.000	Graduate	Marcy Campus (Utica)	By Appointment	No	Active
+Summer 2017	3118	IDT 591	Independent Study/Info Design	1.000	Graduate	Internet/Web	By Appointment	No	Active
+Spring 2016	2862	IDT 591	Independent Study/Info Design	1.000	Graduate	Marcy Campus (Utica)	By Appointment	No	Active
+Fall 2015	1979	IDT 591	Independent Study/Info Design	3.000	Graduate	Marcy Campus (Utica)	By Appointment	No	Active
+Fall 2014	1849	IDT 591	Independent Study/Info Design	3.000	Graduate	Marcy Campus (Utica)	By Appointment	No	Active
+Spring 2014	2728	IDT 591	Independent Study/Info Design	3.000	Graduate	Marcy Campus (Utica)	By Appointment	No	Active
+Fall 2013	1771	IDT 591	Independent Study/Info Design	3.000	Graduate	Marcy Campus (Utica)	By Appointment	No	Active
+Fall 2006	1773	IDT 591	Independent Study/Info Design	1.000	Graduate	Marcy Campus (Utica)		No	Active
+Spring 2006	2724	IDT 591	Independent Study/Info Design	1.000	Graduate	Marcy Campus (Utica)		No	Active
+Fall 2005	1805	IDT 591	Independent Study/Info Design	1.000	Graduate	Marcy Campus (Utica)		No	Active
+Fall 2004	1743	IDT 591	Independent Study/Info Design	1.000	Graduate	Marcy Campus (Utica)		No	Active
+Spring 2022	3599	POS 491	Independent Study/Politicl Sci	4.000	Undergraduate	Marcy Campus (Utica)	By Appointment	No	Active
+Spring 2006	2744	POS 491	Independent Study/Politicl Sci	1.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Fall 2004	1739	POS 491	Independent Study/Politicl Sci	1.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Spring 2003	2765	POS 491	Independent Study/Politicl Sci	1.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Summer 2002	3181	POS 491	Independent Study/Politicl Sci	1.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Spring 1999	2736	POS 491	Independent Study/Politicl Sci	1.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Spring 1997	2712	POS 491	Independent Study/Politicl Sci	1.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Spring 1997	2713	POS 491	Independent Study/Politicl Sci	1.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Spring 1996	2748	POS 491	Independent Study/Politicl Sci	1.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Spring 1994	2654	POS 491	Independent Study/Politicl Sci	1.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Spring 1993	2645	POS 491	Independent Study/Politicl Sci	1.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Spring 1992	2597	POS 491	Independent Study/Politicl Sci	1.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Spring 1992	2598	POS 491	Independent Study/Politicl Sci	1.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Fall 2025	1862	IDT 507	Information Technologies	3.000	Graduate	Internet/Web	Asynchronous Online	No	Active
+Summer 2025	3232	IDT 507	Information Technologies	3.000	Graduate	Internet/Web	Asynchronous Online	No	Active
+Summer 2024	3141	IDT 507	Information Technologies	3.000	Graduate	Internet/Web	Asynchronous Online	No	Active
+Spring 2024	3451	IDT 507	Information Technologies	3.000	Graduate	Internet/Web	Asynchronous Online	No	Active
+Summer 2023	3219	IDT 507	Information Technologies	3.000	Graduate	Internet/Web	Asynchronous Online	No	Active
+Fall 2022	3381	IDT 507	Information Technologies	3.000	Graduate	Internet/Web	Asynchronous Online	No	Active
+Spring 2018	3822	IDT 507	Information Technologies	3.000	Graduate	Internet/Web	On Line	No	Active
+Spring 2017	3694	IDT 507	Information Technologies	3.000	Graduate	Internet/Web	On Line	No	Active
+Summer 2016	3150	IDT 507	Information Technologies	3.000	Graduate	Internet/Web	On Line	No	Active
+Fall 2015	1754	IDT 507	Information Technologies	3.000	Graduate	Internet/Web	On Line	No	Active
+Spring 2014	2615	IDT 507	Information Technologies	3.000	Graduate	Internet/Web	On Line	No	Active
+Spring 2014	2616	IDT 507	Information Technologies	3.000	Graduate	Internet/Web	On Line	No	Active
+Fall 2012	1703	IDT 507	Information Technologies	3.000	Graduate	Internet/Web	On Line	No	Active
+Fall 2012	1704	IDT 507	Information Technologies	3.000	Graduate	Internet/Web	On Line	No	Active
+Spring 2011	2651	IDT 507	Information Technologies	3.000	Graduate	Internet/Web	On Line	No	Active
+Spring 2011	2652	IDT 507	Information Technologies	3.000	Graduate	Internet/Web	On Line	No	Active
+Fall 2008	1529	IDT 507	Information Technologies	3.000	Graduate	Internet/Web	ANGEL On-line	No	Active
+Spring 2006	2516	IDT 507	Information Technologies	3.000	Graduate	Internet/Web		No	Active
+Spring 2005	2711	IDT 507	Information Technologies	3.000	Graduate	Marcy Campus (Utica)		No	Active
+Summer 2018	3135	IDT 592	Internship	1.000	Graduate	Internet/Web	On Line	No	Active
+Summer 2017	3142	IDT 592	Internship	1.000	Graduate	Marcy Campus (Utica)	By Appointment	No	Active
+Fall 2016	1607	IDT 592	Internship	1.000	Graduate	Internet/Web	By Appointment	No	Active
+Summer 2016	3059	IDT 592	Internship	1.000	Graduate	Marcy Campus (Utica)	By Appointment	No	Active
+Spring 2016	2508	IDT 592	Internship	1.000	Graduate	Marcy Campus (Utica)	By Appointment	No	Active
+Fall 2017	1278	COM 106	Intro to Digital Media&Design	4.000	Undergraduate	Marcy Campus (Utica)	Hybrid	No	Active
+Fall 2016	1323	COM 106	Intro to Digital Media&Design	4.000	Undergraduate	Marcy Campus (Utica)	Hybrid	No	Active
+Fall 2015	1347	COM 106	Intro to Digital Media&Design	4.000	Undergraduate	Marcy Campus (Utica)	Hybrid	No	Active
+Fall 2014	1388	COM 106	Intro to Digital Media&Design	4.000	Undergraduate	Marcy Campus (Utica)	Classroom	No	Active
+Fall 2013	1466	COM 106	Intro/Technical Communication	4.000	Undergraduate	Marcy Campus (Utica)	Classroom	No	Active
+Fall 2013	1793	COM 106	Intro/Technical Communication	4.000	Undergraduate	Marcy Campus (Utica)	Classroom	No	Active
+Fall 2012	1628	COM 106	Intro/Technical Communication	4.000	Undergraduate	Marcy Campus (Utica)	Hybrid	No	Active
+Fall 2011	1865	COM 106	Intro/Technical Communication	4.000	Undergraduate	Marcy Campus (Utica)	Hybrid	No	Active
+Fall 2009	1550	ECO 112	Macroeconomics	4.000	Undergraduate	Marcy Campus (Utica)	Classroom	No	Active
+Fall 1997	1216	SSC 362	Methods of Inquiry	4.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Fall 1996	1238	SSC 362	Methods of Inquiry	4.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Spring 1996	2030	SSC 362	Methods of Inquiry	4.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Fall 1995	1258	SSC 362	Methods of Inquiry	4.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Fall 1995	1425	SSC 362	Methods of Inquiry	0.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Fall 1995	1426	SSC 362	Methods of Inquiry	0.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Spring 1995	2032	SSC 362	Methods of Inquiry	4.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Spring 1995	2462	SSC 362	Methods of Inquiry	0.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Spring 1995	2463	SSC 362	Methods of Inquiry	0.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Fall 1994	1292	SSC 362	Methods of Inquiry	4.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Fall 1994	1568	SSC 362	Methods of Inquiry	0.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Fall 1994	1569	SSC 362	Methods of Inquiry	0.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Spring 1994	2036	SSC 362	Methods of Inquiry	4.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Spring 1994	2607	SSC 362	Methods of Inquiry	0.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Spring 1994	2608	SSC 362	Methods of Inquiry	0.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Fall 1993	1334	SSC 362	Methods of Inquiry	4.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Spring 1993	2043	SSC 362	Methods of Inquiry	4.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Fall 1992	1434	SSC 362	Methods of Inquiry	4.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Spring 1992	2057	SSC 362	Methods of Inquiry	4.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Fall 2009	1189	ECO 110	Microeconomics	4.000	Undergraduate	Marcy Campus (Utica)	Classroom	No	Active
+Fall 2009	1190	ECO 110	Microeconomics	4.000	Undergraduate	Marcy Campus (Utica)	Classroom	No	Active
+Summer 2016	3130	POS 262	Online Politics	4.000	Undergraduate	Internet/Web	On Line	No	Active
+Summer 2016	3131	POS 262	Online Politics	4.000	Undergraduate	Internet/Web	On Line	No	Active
+Summer 2016	3132	POS 262	Online Politics	4.000	Undergraduate	Internet/Web	On Line	No	Active
+Fall 2012	1762	POS 262	Online Politics	4.000	Undergraduate	Marcy Campus (Utica)	Hybrid	No	Active
+Spring 2011	2779	COM 262	Online Politics	4.000	Undergraduate	Internet/Web	On Line	No	Active
+Spring 2011	2780	POS 262	Online Politics	4.000	Undergraduate	Internet/Web	On Line	No	Active
+Fall 2006	1565	POS 262	Online Politics	4.000	Undergraduate	Internet/Web		No	Active
+Fall 2006	1566	COM 262	Online Politics	4.000	Undergraduate	Internet/Web		No	Active
+Summer 2003	3063	POS 492	Political Science Internship	4.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Summer 2002	3107	POS 492	Political Science Internship	4.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Summer 2001	3153	POS 492	Political Science Internship	4.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Summer 2025	3214	COM 499	Portfolio Review/Prof Devlpmnt	4.000	Undergraduate	Internet/Web	Asynchronous Online	No	Active
+Spring 2024	3559	IDT 553	Principles & Proj in New Media	3.000	Graduate	Internet/Web	Asynchronous Online	No	Active
+Summer 2023	3151	IDT 553	Principles & Proj in New Media	3.000	Graduate	Internet/Web	Asynchronous Online	No	Active
+Summer 2018	3063	IDT 553	Principles & Proj in New Media	3.000	Graduate	Internet/Web	On Line	No	Active
+Summer 2016	3029	IDT 553	Principles & Proj in New Media	3.000	Graduate	Internet/Web	On Line	No	Active
+Summer 2013	3125	IDT 553	Principles & Proj in New Media	3.000	Graduate	Internet/Web	On Line	No	Active
+Summer 2017	3024	IDT 553	Principles and Projects in New Media	3.000	Graduate	Internet/Web	On Line	No	Active
+Summer 2003	3088	POS 339	Public Opinion/Contemp Society	2.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Summer 2002	3148	POS 339	Public Opinion/Contemp Society	2.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Summer 2001	3152	POS 339	Public Opinion/Contemp Society	2.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Fall 2005	1070	COM 306	Report Writing/Tech Communcatn	4.000	Undergraduate	Marcy Campus (Utica)		No	Active
+Fall 2013	1455	IDT 530	Research Methods for IDT	3.000	Graduate	Internet/Web	On Line	No	Active
+Spring 2018	3696	IDT 585	Seminar/Emerging Info Technlog	3.000	Graduate	Internet/Web	On Line	No	Active
+Summer 2016	3116	IDT 585	Seminar/Emerging Info Technlog	3.000	Graduate	Internet/Web	On Line	No	Active
+Fall 2
+````
+
+
+
+
+
+---
+Powered by [Claude Exporter](https://www.claudexporter.com)
