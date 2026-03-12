@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Claude Project Info — DAC-AC</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@300;400;600&display=swap');
+
+  :root {
+    --bg: #0f0f0f;
+    --surface: #1a1a1a;
+    --border: #2e2e2e;
+    --accent: #c8a96e;
+    --text: #d4d4d4;
+    --muted: #666;
+    --heading: #f0ede8;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 300;
+    line-height: 1.7;
+    padding: 2rem;
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  header {
+    border-bottom: 1px solid var(--accent);
+    padding-bottom: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  header h1 {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--accent);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  header p {
+    font-size: 0.8rem;
+    color: var(--muted);
+    margin-top: 0.25rem;
+    font-family: 'IBM Plex Mono', monospace;
+  }
+
+  details {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    margin-bottom: 1rem;
+    border-radius: 2px;
+  }
+
+  summary {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--accent);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 0.9rem 1.2rem;
+    cursor: pointer;
+    user-select: none;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  summary::-webkit-details-marker { display: none; }
+
+  summary::before {
+    content: '▶';
+    font-size: 0.6rem;
+    transition: transform 0.2s;
+    color: var(--muted);
+  }
+
+  details[open] summary::before {
+    transform: rotate(90deg);
+  }
+
+  .content {
+    padding: 0 1.4rem 1.4rem;
+    border-top: 1px solid var(--border);
+  }
+
+  h2 {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin: 1.4rem 0 0.5rem;
+    padding-bottom: 0.3rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  h3 {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--heading);
+    margin: 1rem 0 0.3rem;
+  }
+
+  p { font-size: 0.875rem; margin-bottom: 0.6rem; }
+
+  ul {
+    padding-left: 1.2rem;
+    margin-bottom: 0.6rem;
+  }
+
+  li { font-size: 0.875rem; margin-bottom: 0.25rem; }
+
+  strong { color: var(--heading); font-weight: 600; }
+
+  .tag {
+    display: inline-block;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.7rem;
+    background: #222;
+    border: 1px solid var(--border);
+    color: var(--accent);
+    padding: 0.1rem 0.4rem;
+    border-radius: 2px;
+    margin-right: 0.3rem;
+  }
+
+  .file-row {
+    display: flex;
+    gap: 1rem;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--border);
+    align-items: baseline;
+    font-size: 0.875rem;
+  }
+
+  .file-row:last-child { border-bottom: none; }
+
+  .file-name {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.78rem;
+    color: var(--heading);
+    min-width: 260px;
+  }
+
+  .file-note { color: var(--muted); font-size: 0.82rem; }
+
+  .none-set {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.8rem;
+    color: var(--muted);
+    font-style: italic;
+    padding: 0.8rem 0;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Claude Project Info — DAC-AC</h1>
+  <p>Generated 2026-03-10 · SUNY Poly / AIX Center</p>
+</header>
+
+<details open>
+  <summary>Memory</summary>
+  <div class="content">
+
+    <h2>Purpose &amp; Context</h2>
+    <p>Steve is a Professor at SUNY Polytechnic Institute and Co-Director of the <strong>AIX Center</strong>. Core research agenda: <strong>Inference Cycle Analysis (ICA)</strong> — capturing, analyzing, and tracing the provenance of human-AI interactions as discrete analytical units across temporal, user-based, topical, and organizational dimensions.</p>
+    <p>Flagship project: <strong>DAC-AC</strong> (Development of Analytical Capabilities for Information Campaign Assessment), DoD/Army contract with DEVCOM Analysis Center. Deliverables: 1.1 case studies &amp; experimental results, 1.2 analytical tools, 1.3 publications &amp; analyses.</p>
+    <p>Central methodological anchor: <strong>M-DUN framework</strong> (Modeling Dense Urban Networks), developed by Perceptronics Solutions. 12-dimension societal vulnerability assessment with entropy-based measurement and radar chart visualization. ICA is the analytical provenance layer M-DUN lacks — complementary, not competitive.</p>
+
+    <h2>Key Collaborators</h2>
+    <ul>
+      <li><strong>Pete Grazaitis</strong> — DEVCOM DAC-AC POC; co-author Wolfel et al. 2024</li>
+      <li><strong>Rick Wolfel</strong> — M-DUN co-developer, Perceptronics Solutions</li>
+      <li><strong>Dr. Asela Abeya</strong> — mathematician, co-PI (Tuesday 2–4 scheduling constraint)</li>
+      <li><strong>William Thistleton</strong> — co-PI, SUNY Poly</li>
+      <li><strong>Gene Kim / USF team</strong> — hierarchical assessment tools, 5-dimension analytical product evaluation</li>
+      <li><strong>Rick Grannis</strong> — UC Irvine, M-DUN co-author; potential competitive dynamic as commercial contractor</li>
+    </ul>
+
+    <h2>Current State</h2>
+    <p>Contract newly awarded, early coordination phase. Active work includes:</p>
+    <ul>
+      <li>Correspondence with Grazaitis: travel funding, April kickoff (Aberdeen or West Point), M-DUN resource tiers</li>
+      <li><strong>Context contribution assay</strong> — core measurement instrument: paired artifacts (context-free baseline vs. context-rich) measuring divergence as signal of AI's analytical contribution</li>
+      <li>April kickoff scheduling via Teams (Steve: Tue 3–5; Asela: later preferred)</li>
+    </ul>
+    <p>Literature anchors: <strong>Wolfel et al. 2017</strong> (foundational M-DUN theory), <strong>Wolfel et al. 2024</strong> (Burkina Faso; predicted Sept 2022 coup ~3.5 months in advance).</p>
+
+    <h2>On the Horizon</h2>
+    <ul>
+      <li><strong>Burkina Faso reverse-engineering</strong> — primary validation case study; Afrobarometer as main data source; country-agnostic infrastructure from the start</li>
+      <li><strong>Daily M-DUN OSINT</strong> — 11 African coups since 2020 tracked: Mali ×2, Chad, Guinea, Sudan, Burkina Faso ×2, Niger, Gabon, Madagascar, Guinea-Bissau</li>
+      <li><strong>Postdoc hire</strong> — analytical tools/infrastructure, SNA, conversation analysis, empirical methods; "show your work" application required</li>
+      <li><strong>Literature corpus</strong> — backward snowball from Wolfel 2024 through Binder/Verba/LaPalombara; living knowledge base in AIX Workbench</li>
+      <li><strong>RAG-based dimensional mapping</strong> — PDFs → text → queried against 12 M-DUN dimensions → operational rules for OSINT signal interpretation</li>
+      <li><strong>AFOSR funding</strong> — 5 programs identified; Aleksey Panasyuk / AFRL persuasive narrative collaboration most relevant</li>
+    </ul>
+
+    <h2>Key Principles</h2>
+    <ul>
+      <li><strong>Infrastructure before implementation</strong> — no premature execution</li>
+      <li><strong>Deliverable-anchored design</strong> — all tools map to 1.1 / 1.2 / 1.3</li>
+      <li><strong>Complementarity over competition</strong> — ICA as provenance layer, not M-DUN replication</li>
+      <li><strong>Data availability drives case selection</strong></li>
+      <li><strong>Audit trails non-negotiable</strong> — source accessibility shapes storage architecture</li>
+      <li><strong>AI as black box</strong> — research tests analyst effectiveness, not AI performance</li>
+      <li><strong>"Silent team members"</strong> — aggregate AI queries reveal institutional patterns before individuals recognize them</li>
+      <li><strong>Methodological transparency</strong> — vendor-independent, instrumented systems required</li>
+    </ul>
+
+    <h2>Approach &amp; Patterns</h2>
+    <ul>
+      <li>Concise, direct, collegial; dislikes hedging and academic abstraction</li>
+      <li>Skilled at translating between academic and operational/military contexts</li>
+      <li>Iterative refinement; precise language (e.g., "affects" vs. "effects")</li>
+      <li>Dual-track design: archival/reconstruction (Burkina Faso) + prospective generation (Daily M-DUN)</li>
+      <li>Hybrid experimental: student simulations for statistical power + expert analyst validation for credibility</li>
+      <li>Meta-analytical awareness: own research process as data source; has studied long-context AI drift as an instance of the phenomena he researches</li>
+    </ul>
+
+    <h2>Tools &amp; Resources</h2>
+    <ul>
+      <li><span class="tag">AIX Workbench</span> Open WebUI — primary research infrastructure</li>
+      <li><span class="tag">Claude Code</span> Python: RSS monitoring, deduplication, LLM synthesis, reporting</li>
+      <li><span class="tag">Afrobarometer</span> Primary data source for Burkina Faso analysis</li>
+      <li><span class="tag">Zotero</span> Bibliography management (dac-ac.bib needs population)</li>
+      <li><span class="tag">TiddlyWiki / MediaWiki</span> Hypertext export formats</li>
+      <li><span class="tag">SBIR.gov</span> Perceptronics contract abstracts</li>
+      <li><span class="tag">SharePoint / email</span> Output targets for automated reports</li>
+      <li><span class="tag">METT-TC</span> USF proof-of-concept testing ground</li>
+    </ul>
+
+  </div>
+</details>
+
+<details>
+  <summary>Project Instructions</summary>
+  <div class="content">
+    <p class="none-set">— None set —</p>
+  </div>
+</details>
+
+<details>
+  <summary>Project Files</summary>
+  <div class="content">
+
+    <h2>Documents</h2>
+    <div class="file-row"><span class="file-name">WhitePaper</span><span class="file-note">DAC-AC proposal — background, deliverables 1.1–1.3, references, ROM cost ($358K/yr)</span></div>
+    <div class="file-row"><span class="file-name">Claude-Steve-Conversation_review_and_analysis.md</span><span class="file-note">~270K — large conversation review/analysis</span></div>
+    <div class="file-row"><span class="file-name">ChatGPT-Mamdani_party_and_ideology.md</span><span class="file-note">~57K — ChatGPT conversation on Mamdani/party ideology</span></div>
+    <div class="file-row"><span class="file-name">ChatGPT-Mamdani_party_and_ideology-2.md</span><span class="file-note">~57K — second version/continuation</span></div>
+
+    <h2>"No Kings" Case Study</h2>
+    <div class="file-row"><span class="file-name">no_kings_one_pager_1.pdf</span><span class="file-note">One-pager PDF</span></div>
+    <div class="file-row"><span class="file-name">no_kings_mdun_network.png</span><span class="file-note">M-DUN network visualization</span></div>
+    <div class="file-row"><span class="file-name">no_kings_numeric_bar.png</span><span class="file-note">Numeric bar chart</span></div>
+    <div class="file-row"><span class="file-name">no_kings_sample_map.png</span><span class="file-note">Sample map</span></div>
+
+  </div>
+</details>
+
+</body>
+</html>

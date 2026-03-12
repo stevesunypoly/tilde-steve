@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Claude Project Info</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+      background: #f5f5f5;
+      color: #333;
+    }
+    h1 {
+      color: #2c3e50;
+      margin-bottom: 30px;
+    }
+    details {
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      padding: 15px;
+      margin-bottom: 15px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+    details summary {
+      cursor: pointer;
+      font-weight: 600;
+      color: #2c3e50;
+      padding: 5px;
+      user-select: none;
+    }
+    details summary:hover {
+      background: #f9f9f9;
+      border-radius: 3px;
+    }
+    details[open] summary {
+      border-bottom: 2px solid #3498db;
+      padding-bottom: 10px;
+      margin-bottom: 15px;
+    }
+    .content {
+      padding: 10px 0;
+      line-height: 1.6;
+    }
+    .memory-section {
+      background: #f9fafb;
+      padding: 12px;
+      border-left: 4px solid #3498db;
+      border-radius: 3px;
+      margin: 10px 0;
+      font-size: 14px;
+    }
+    .memory-section h3 {
+      margin-top: 0;
+      color: #2c3e50;
+      font-size: 16px;
+    }
+    .memory-section ul, .memory-section ol {
+      margin: 8px 0;
+      padding-left: 20px;
+    }
+    .memory-section li {
+      margin: 4px 0;
+    }
+    .instruction-block {
+      background: #fffbf0;
+      padding: 12px;
+      border-left: 4px solid #f39c12;
+      border-radius: 3px;
+      margin: 10px 0;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+    .file-item {
+      padding: 8px 12px;
+      background: #f0f7ff;
+      border-left: 4px solid #27ae60;
+      margin: 8px 0;
+      border-radius: 3px;
+      font-family: 'Courier New', monospace;
+      font-size: 13px;
+    }
+    code {
+      background: #f4f4f4;
+      padding: 2px 6px;
+      border-radius: 3px;
+      font-family: 'Courier New', monospace;
+    }
+  </style>
+</head>
+<body>
+  <h1>Claude Project Information</h1>
+
+  <details open>
+    <summary>📋 Memory</summary>
+    <div class="content">
+      <div class="memory-section">
+        <h3>Purpose & Context</h3>
+        <p>Steve is a Professor of Information Design & Technology at SUNY Polytechnic Institute and Co-Director of the AI Exploration Center (AIX Center). His work spans instructional design, AI literacy education, and academic research.</p>
+        <p><strong>Key ongoing projects:</strong></p>
+        <ul>
+          <li><strong>IDT 590 / DesignWriteStudio:</strong> Course focused on instructional design and AI literacy</li>
+          <li><strong>AIX (AI Exchange):</strong> Personal knowledge management system built on TiddlyWiki zettelkasten principles, designed to capture and link insights from Claude conversations</li>
+          <li><strong>MICA (Monadic Inference Cycle Analysis):</strong> Framework for analyzing AI conversation patterns; every AIX tiddler connects back via <code>source-conversation</code> field</li>
+          <li><strong>Academic website:</strong> Rebuilt as static HTML/CSS on GitHub Pages at <code>stevesunypoly.github.io/tilde-steve/</code></li>
+        </ul>
+      </div>
+
+      <div class="memory-section">
+        <h3>Current State</h3>
+        <ul>
+          <li>AIX TiddlyWiki schema fully designed with CamelCase titles, semantic categories as tags, and MICA bridge field</li>
+          <li>Academic website rebuild complete and hosted on GitHub Pages</li>
+          <li>Transcript conversion workflow operational (Python script for markdown → HTML)</li>
+          <li>Preparing AI literacy curriculum outreach to SUNY AI Fellows</li>
+        </ul>
+      </div>
+
+      <div class="memory-section">
+        <h3>Key Learnings & Principles</h3>
+        <ul>
+          <li><strong>Artifacts are primary; transcripts are provenance:</strong> AI-generated artifacts are meaningful outputs; conversations are traceable origins</li>
+          <li><strong>Insight evaporation is a real problem:</strong> Structured capture systems (AIX) prevent loss of ideas</li>
+          <li><strong>Honest framing of AI outputs:</strong> Position as starting points rather than finished products</li>
+          <li><strong>Security boundaries:</strong> Maintain careful separation between AI tooling and institutional systems</li>
+        </ul>
+      </div>
+
+      <div class="memory-section">
+        <h3>Approach & Tools</h3>
+        <p><strong>Technical fluency:</strong> Git workflows, GitHub Pages, static site architecture, Python scripting, TiddlyWiki Node.js server</p>
+        <p><strong>Tool usage:</strong> Claude (primary AI), ChatGPT (independent evaluation), TiddlyWiki, GitHub, Python</p>
+        <p><strong>Sequencing:</strong> Uses more capable models for architecture/design, lighter models for execution; conducts independent security reviews</p>
+      </div>
+    </div>
+  </details>
+
+  <details>
+    <summary>📖 Project Instructions</summary>
+    <div class="content">
+      <div class="instruction-block">
+        <p>This is a <strong>Claude Project</strong> context. Project instructions are embedded in the system prompt and tailored to Steve's workflow.</p>
+        <p><strong>Key directives:</strong></p>
+        <ul>
+          <li>Keep responses brief but clear (matches Steve's preference for light code)</li>
+          <li>Use artifacts for substantial outputs (code, HTML, scripts, content)</li>
+          <li>Leverage skills documentation when creating files (docx, pptx, xlsx, pdf, HTML/frontend)</li>
+          <li>Apply memory naturally without meta-commentary about memory systems</li>
+          <li>Conduct independent verification of product information before relying on it</li>
+        </ul>
+      </div>
+      <div class="instruction-block">
+        <p><strong>User preferences (configured):</strong></p>
+        <ul>
+          <li>Writes light code: HTML, TiddlyWiki scripts, etc.</li>
+          <li>Comfortable with Python but doesn't write it</li>
+          <li>Prefers brief but clear explanations</li>
+        </ul>
+      </div>
+      <div class="instruction-block">
+        <p><strong>Claude's project behavior:</strong></p>
+        <ul>
+          <li>Respects security boundaries and manual review for institutional workflows</li>
+          <li>Uses conversation search tools to reference past discussions naturally</li>
+          <li>Treats artifacts and transcripts as a versioned knowledge system</li>
+          <li>Applies memory edits tool to update context as needed</li>
+        </ul>
+      </div>
+    </div>
+  </details>
+
+  <details>
+    <summary>📁 Project Files</summary>
+    <div class="content">
+      <p><strong>Note:</strong> This Claude Project uses a distributed storage model. Key resources:</p>
+      <div class="file-item">GitHub Repository: stevesunypoly.github.io/tilde-steve/</div>
+      <div class="file-item">AIX TiddlyWiki: GitHub-hosted Node.js server instance</div>
+      <div class="file-item">Academic Website: Static HTML/CSS site on GitHub Pages</div>
+      <div class="file-item">Transcripts: Archived with conversion workflow (markdown → collapsible HTML)</div>
+      <div class="file-item">Python Tools: Transcript conversion scripts (in project repo)</div>
+      <p style="margin-top: 15px; font-size: 13px; color: #666;">Project files are managed via GitHub and distributed across repositories rather than stored in a central project directory. This aligns with Steve's preference for version-controlled, distributed knowledge systems.</p>
+    </div>
+  </details>
+
+  <hr style="margin-top: 40px; border: none; border-top: 1px solid #ddd;">
+  <p style="text-align: center; color: #999; font-size: 13px;">Generated from Claude Project metadata • March 10, 2026</p>
+</body>
+</html>
